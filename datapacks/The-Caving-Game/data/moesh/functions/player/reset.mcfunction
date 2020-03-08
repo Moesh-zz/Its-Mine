@@ -16,9 +16,7 @@ effect give @s minecraft:saturation 5 10 true
 # Set players gamemode
 # Game is in lobby mode
 execute if score GameState gameVariable matches 0 run gamemode adventure @s
-execute if score GameState gameVariable matches 0 run scoreboard players enable @s teamSelected
 execute if score GameState gameVariable matches 0 run scoreboard players enable @s spectate
-execute if score GameState gameVariable matches 0 run scoreboard players set @s teamSelected 0
 execute if score GameState gameVariable matches 0 run scoreboard players set @s spectate 0
 # Game is in-progress
 execute if score GameState gameVariable matches 1 run gamemode spectator @s

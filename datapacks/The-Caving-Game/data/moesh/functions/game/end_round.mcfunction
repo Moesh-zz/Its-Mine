@@ -13,7 +13,6 @@ gamemode spectator @a
 # Players cannot GG after the round has ended
 scoreboard players reset @a gg
 
-
 # The match has ended, let's updated the MatchID so players are properly handled
 execute store result score MatchID gameVariable run time query gametime
 scoreboard players operation @a[team=red] matchID = MatchID gameVariable
