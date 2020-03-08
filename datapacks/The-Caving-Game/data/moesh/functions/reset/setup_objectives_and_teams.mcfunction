@@ -32,7 +32,7 @@ scoreboard objectives add gameVariable dummy
 	scoreboard players set GameState gameVariable 0
 		# 0 = not in-progress
 		# 1 = in-progress
-		# 2 = unused, usually "game ending stage"
+		# 2 = after game finished
 
 # Players may disconnect and reconnect during matches, let's ensure they're in the right match.
 scoreboard objectives remove matchID
