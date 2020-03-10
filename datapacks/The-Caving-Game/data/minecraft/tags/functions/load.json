@@ -1,5 +1,7 @@
 {
 	"values": [
-		
+		"moesh:clear_entities",
+		"moesh:set_rules",
+		"moesh:setup_objectives_and_teams"
 	]
 }
