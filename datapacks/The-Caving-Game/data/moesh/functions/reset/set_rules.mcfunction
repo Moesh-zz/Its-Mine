@@ -1,3 +1,5 @@
+# Called from: minecraft:load
+
 #---------------------------------------------------------------------------------------------------
 # Purpose: Reset all parts of the map which do not affect the current game state.
 #---------------------------------------------------------------------------------------------------
@@ -41,3 +43,5 @@ gamerule spawnRadius 7
 # Submitted for the approval of the Midnight Society...
 time set midnight
 
+# Let's alert the devs.
+tellraw @a[gamemode=creative] {"text":">>> %s","color":"white","with":[{"text":"Gamerules and world options set"}]}
