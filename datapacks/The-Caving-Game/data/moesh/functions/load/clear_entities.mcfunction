@@ -10,4 +10,4 @@ tp @e[type=!player,type=!iron_golem] ~ 0 ~
 kill @e[type=!player,type=!iron_golem]
 
 # Let's alert the devs.
-tellraw @a[gamemode=creative] {"text":">>> %s","color":"white","with":[{"text":"All non-essential entities cleared."}]}
+tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"All non-essential entities cleared."}]}

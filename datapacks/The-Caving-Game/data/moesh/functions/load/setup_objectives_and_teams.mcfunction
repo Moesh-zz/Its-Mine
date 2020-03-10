@@ -31,24 +31,33 @@ scoreboard objectives add CONST dummy
 # SET GAME VARIABLES
 scoreboard objectives remove gameVariable
 scoreboard objectives add gameVariable dummy
+	# Index:
+	# 0 = Lobby
+	# 1 = In-progress
+	# 2 = Post game
+	# Game starts in lobby mode by default.
 	scoreboard players set GameState gameVariable 0
-		# 0 = not in-progress
-		# 1 = in-progress
-		# 2 = after game finished
+	# 15 seconds until game 
+	scoreboard players set Countdown gameVariable 300
 
 # Players may disconnect and reconnect during matches, let's ensure they're in the right match.
 scoreboard objectives remove matchID
 scoreboard objectives add matchID dummy
-
+# Minecraft will tick this up when a player disconnects from the game.
 scoreboard objectives remove leaveGame
 scoreboard objectives add leaveGame minecraft.custom:minecraft.leave_game
 
+# Player triggers
+# These are ALWAYS reset when they are enabled. Players have no score by default.
 # GG
 scoreboard objectives remove gg
 scoreboard objectives add gg trigger
-
+# Reset
 scoreboard objectives remove reset
 scoreboard objectives add reset trigger
+# Start round
+scoreboard objectives remove startRound
+scoreboard objectives add startRound trigger
 
 # Let's alert the devs.
-tellraw @a[gamemode=creative] {"text":">>> %s","color":"white","with":[{"text":"Teams and objectives reset"}]}
+tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"Teams and objectives reset"}]}

@@ -3,5 +3,6 @@
 #---------------------------------------------------------------------------------------------------
 # Purpose: Reset both the blocks and gamerules to the shipping state
 #---------------------------------------------------------------------------------------------------
-function moesh:reset/set_rules
-schedule function moesh:reset/clear_entities 1t
+function moesh:load/set_rules
+function moesh:load/setup_objectives_and_teams
+schedule function moesh:load/clear_entities 1t

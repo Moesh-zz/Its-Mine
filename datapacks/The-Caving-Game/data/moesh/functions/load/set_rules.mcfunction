@@ -44,4 +44,4 @@ gamerule spawnRadius 7
 time set midnight
 
 # Let's alert the devs.
-tellraw @a[gamemode=creative] {"text":">>> %s","color":"white","with":[{"text":"Gamerules and world options set"}]}
+tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"Gamerules and world options set"}]}

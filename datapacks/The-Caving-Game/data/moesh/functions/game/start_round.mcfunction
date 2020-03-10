@@ -14,7 +14,7 @@ gamerule mobGriefing true
 
 # Set map rules and clean-up
 # Kill all non-player, non-villager entities
-function moesh:reset/clear_entities
+function moesh:load/clear_entities
 
 # Purpose: Establish a SessionID by using gametime
 execute store result score MatchID gameVariable run time query gametime
@@ -25,7 +25,7 @@ scoreboard players operation @a[team=blue] matchID = MatchID gameVariable
 # Purpose: Give players items and effects and let them play the game.
 #---------------------------------------------------------------------------------------------------
 # Send tellraw BEFORE changing any game modes!
-tellraw @a {"translate":"%s VIVA LA REVOLUTION!","color":"green","with":[{"text":">>>","color":"white"}]}
+tellraw @a {"translate":"%s Get the most ores to win!","color":"green","with":[{"text":">>>","color":"white"}]}
 playsound minecraft:event.raid.horn master @a 217 100 195 999999
 
 # Clear the player's items and effects, refill their bars
