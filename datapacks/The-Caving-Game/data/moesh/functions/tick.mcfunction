@@ -9,15 +9,17 @@
 execute as @a[scores={leaveGame=1..}] at @s run function moesh:player/left_game
 
 # The functions below will handle players, no matter what state the game is in. 
-execute as @a[tag=!Registered] run function moesh:player/reset
-execute as @a[tag=!Registered] run function moesh:player/set_objectives
+execute as @a[tag=!Registered] at @s run function moesh:player/reset
+execute as @a[tag=!Registered] at @s run function moesh:player/set_objectives
 execute as @a[tag=!Registered] run tellraw @s {"text":"Welcome to The Caving Game!"}
 execute as @a[tag=!Registered] run tag @s add Registered
 
 #---------------------------------------------------------------------------------------------------
 # Purpose: Tick these functions during the lobby stage
 #---------------------------------------------------------------------------------------------------
-execute if score GameState gameVariable matches 0 run function rev:moesh/check_for_start_round_request
+
+# The commands became numerous enough to require further context for sub-states
+execute if score GameState gameVariable matches 0 run function moesh:lobby/tick
 
 #---------------------------------------------------------------------------------------------------
 # Purpose: Tick these functions during the match
@@ -35,5 +37,5 @@ execute as @a at @s unless entity @s[gamemode=spectator] if score GameState game
 # Purpose: Tick these functions after the match
 #---------------------------------------------------------------------------------------------------
 # Let players look at the map before resetting it. It must be done manually.
-scoreboard players set @a[scores={reset=..0}] reset 1
-execute if score GameState gameVariable matches 2 if entity @a[scores={reset=1..}] run function moesh:load
+#scoreboard players set @a[scores={reset=..0}] reset 1
+#execute if score GameState gameVariable matches 2 if entity @a[scores={reset=1..}] run function moesh:load
