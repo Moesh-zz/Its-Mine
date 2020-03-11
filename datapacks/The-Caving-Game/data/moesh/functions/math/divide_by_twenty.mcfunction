@@ -3,8 +3,8 @@
 #---------------------------------------------------------------------------------------------------
 # Run math to determine is a full second has passed
 #---------------------------------------------------------------------------------------------------
-scoreboard players operation #InSeconds gameVariable /= TWENTY CONST
-scoreboard players operation #Every20Ticks gameVariable %= TWENTY CONST
+scoreboard players operation #InSeconds gameVariable /= 20 CONST
+scoreboard players operation #Every20Ticks gameVariable %= 20 CONST
 # This line above is uses something called a modulus. That means "absolute value". The %= operator
 # means I'm taking the remainder of #Every20Ticks/20 (or TWENTY CONST as the script requires).
 # If it is not a perfect zero, I know it's not a whole number, and therefore a second has not
