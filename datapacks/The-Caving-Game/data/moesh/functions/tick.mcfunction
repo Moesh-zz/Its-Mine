@@ -33,6 +33,9 @@ execute if entity @a[scores={gg=1..}] if score GameState gameVariable matches 1 
 # Prevent players from leaving the play area
 execute as @a at @s unless entity @s[gamemode=spectator] if score GameState gameVariable matches 1 run function moesh:game/out_of_bounds
 
+# Countdown the timer!
+execute if score GameState gameVariable matches 1 run function moesh:game/countdown_timer
+
 #---------------------------------------------------------------------------------------------------
 # Purpose: Tick these functions after the match
 #---------------------------------------------------------------------------------------------------

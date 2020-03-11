@@ -41,6 +41,8 @@ scoreboard objectives add gameVariable dummy
 	scoreboard players set Countdown gameVariable 300
 	# Players are not ready
 	scoreboard players set PlayersAreReady gameVariable 0
+	# 10 minute game timer
+	scoreboard players set TimeInTicks gameVariable 12000
 
 # Players may disconnect and reconnect during matches, let's ensure they're in the right match.
 scoreboard objectives remove matchID
