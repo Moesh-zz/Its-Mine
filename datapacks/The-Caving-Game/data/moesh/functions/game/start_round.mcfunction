@@ -33,3 +33,9 @@ function moesh:player/reset
 
 # Players can choose to leave the game early if they please.
 scoreboard players enable @a[team=players] gg
+
+#---------------------------------------------------------------------------------------------------
+# Purpose: Update game state
+#---------------------------------------------------------------------------------------------------
+scoreboard players set PlayersAreReady gameVariable 0
+scoreboard players set GameState gameVariable 1
