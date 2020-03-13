@@ -30,7 +30,8 @@ playsound minecraft:event.raid.horn master @a 217 100 195 999999
 # Clear the player's items and effects, refill their bars
 function moesh:player/reset
 
-# Players can choose to leave the game early if they please.
+# Update player triggers
+scoreboard players reset * cancelStart
 scoreboard players enable @a[team=players] gg
 
 #---------------------------------------------------------------------------------------------------
