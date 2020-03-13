@@ -39,8 +39,8 @@ scoreboard objectives add gameVariable dummy
 	scoreboard players set GameState gameVariable 0
 	# 15 seconds until game 
 	scoreboard players set Countdown gameVariable 300
-	# Players are not ready
-	scoreboard players set PlayersAreReady gameVariable 0
+	# The round is no longer starting. It started.
+	scoreboard players set StartingRound gameVariable 0
 	# 10 minute game timer
 	scoreboard players set TimeInTicks gameVariable 12000
 
@@ -64,4 +64,4 @@ scoreboard objectives remove startRound
 scoreboard objectives add startRound trigger
 
 # Let's alert the devs.
-tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"Teams and objectives reset"}]}
+tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"Teams and objectives reset","color":"green"}]}
