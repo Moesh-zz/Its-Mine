@@ -16,11 +16,13 @@ effect give @s minecraft:instant_health 3 10 true
 effect give @s minecraft:saturation 5 10 true
 
 # Set players gamemode
-# Game is in lobby mode
+# Game is in lobby mode and make them join the right team
 execute if score GameState gameVariable matches 0 run gamemode adventure @s
+execute if score GameState gameVariable matches 0 run team join players @s
 execute if score GameState gameVariable matches 0 run scoreboard players enable @s spectate
 execute if score GameState gameVariable matches 0 run scoreboard players set @s spectate 0
 # Game is in-progress
 execute if score GameState gameVariable matches 1 run gamemode spectator @s
+execute if score GameState gameVariable matches 1 run team join specators @s
 # Game is post-match
 execute if score GameState gameVariable matches 2 run gamemode spectator @s

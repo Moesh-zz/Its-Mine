@@ -11,8 +11,7 @@ scoreboard players set GameState gameVariable 2
 
 # All players become spectators!
 gamemode spectator @a
-
-
+team join specators @a
 
 # The match has ended, let's updated the SessionID so players are properly handled
 execute store result score SessionID gameVariable run time query gametime
