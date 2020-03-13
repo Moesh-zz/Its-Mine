@@ -37,7 +37,7 @@ scoreboard objectives add gameVariable dummy
 	# 2 = Post game
 	# Game starts in lobby mode by default.
 	scoreboard players set GameState gameVariable 0
-	# 15 seconds until game 
+	# 15 seconds until game
 	scoreboard players set Countdown gameVariable 300
 	# The round is no longer starting. It started.
 	scoreboard players set StartingRound gameVariable 0

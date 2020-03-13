@@ -18,7 +18,7 @@ gamerule showDeathMessages true
 gamerule naturalRegeneration true
 gamerule doImmediateRespawn false
 
-# Other gamerules 
+# Other gamerules
 gamerule disableRaids true
 gamerule doInsomnia false
 gamerule doLimitedCrafting false

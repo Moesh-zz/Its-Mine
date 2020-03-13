@@ -6,7 +6,7 @@
 
 # Always set
 
-# Enable if the match is in lobby mode 
+# Enable if the match is in lobby mode
 execute if score GameState gameVariable matches 0 run scoreboard players reset @s startRound
 execute if score GameState gameVariable matches 0 run scoreboard players enable @s startRound
 

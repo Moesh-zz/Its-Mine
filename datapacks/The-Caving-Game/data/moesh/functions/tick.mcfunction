@@ -8,7 +8,7 @@
 # Let's first check to see if any online player has left the game
 execute as @a[scores={leaveGame=1..}] at @s run function moesh:player/left_game
 
-# The functions below will handle players, no matter what state the game is in. 
+# The functions below will handle players, no matter what state the game is in.
 execute as @a[tag=!Registered] at @s run function moesh:player/reset
 execute as @a[tag=!Registered] at @s run function moesh:player/set_objectives
 execute as @a[tag=!Registered] run tellraw @s {"text":"Welcome to The Caving Game!"}
@@ -22,7 +22,7 @@ execute as @a[tag=!Registered] run tag @s add Registered
 execute if score GameState gameVariable matches 0 run function moesh:lobby/tick
 
 # This line below is for players who want to be cheeky. If they ever set a score for startRound,
-# go ahead and assume they want to start the round. 
+# go ahead and assume they want to start the round.
 execute if score GameState gameVariable matches 0 run scoreboard players set @a[scores={startRound=..-1}] startRound 0
 execute if score GameState gameVariable matches 0 run scoreboard players enable @a[scores={startRound=0}] startRound
 
@@ -40,7 +40,7 @@ execute if score GameState gameVariable matches 0 if score StartingRound gameVar
 #---------------------------------------------------------------------------------------------------
 # Let players run a GG command to end a game early
 # This next line is essentially protection of players against themselves. They can use
-# /trigger set gg 0, therefore disabling the gg trigger for themselves. 
+# /trigger set gg 0, therefore disabling the gg trigger for themselves.
 execute if score GameState gameVariable matches 1 run scoreboard players set @a[scores={gg=..0}] gg 1
 execute if entity @a[scores={gg=1..}] if score GameState gameVariable matches 1 run function moesh:game/gg
 
