@@ -19,7 +19,6 @@ function moesh:load/clear_entities
 # Purpose: Establish a SessionID by using gametime
 execute store result score SessionID gameVariable run time query gametime
 scoreboard players operation @a SessionID = SessionID gameVariable
-scoreboard players operation @a[team=blue] matchID = MatchID gameVariable
 
 #---------------------------------------------------------------------------------------------------
 # Purpose: Give players items and effects and let them play the game.
