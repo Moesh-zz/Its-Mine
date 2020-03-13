@@ -21,6 +21,20 @@ execute as @a[tag=!Registered] run tag @s add Registered
 # The commands became numerous enough to require further context for sub-states
 execute if score GameState gameVariable matches 0 run function moesh:lobby/tick
 
+# This line below is for players who want to be cheeky. If they ever set a score for startRound,
+# go ahead and assume they want to start the round. 
+execute if score GameState gameVariable matches 0 run scoreboard players set @a[scores={startRound=..-1}] startRound 0
+execute if score GameState gameVariable matches 0 run scoreboard players enable @a[scores={startRound=0}] startRound
+
+# If a game is not starting, check to see if players want to start a game
+execute as @a[scores={startRound=1..}] at @s if score GameState gameVariable matches 0 if score PlayersAreReady gameVariable matches 0 run function moesh:lobby/trigger_start_round
+
+# If a game start is happening, check to see if players want to cancel it
+# TODO: execute if score PlayersAreReady gameVariable matches 1 run function moesh:lobby/trigger_cancel_start
+
+# Tick this every second if players will it.
+execute if score GameState gameVariable matches 0 if score PlayersAreReady gameVariable matches 1 run function moesh:lobby/timer
+
 #---------------------------------------------------------------------------------------------------
 # Purpose: Tick these functions during the match
 #---------------------------------------------------------------------------------------------------
@@ -34,7 +48,7 @@ execute if entity @a[scores={gg=1..}] if score GameState gameVariable matches 1 
 execute as @a at @s unless entity @s[gamemode=spectator] if score GameState gameVariable matches 1 run function moesh:game/out_of_bounds
 
 # Countdown the timer!
-execute if score GameState gameVariable matches 1 run function moesh:game/countdown_timer
+execute if score GameState gameVariable matches 1 run function moesh:game/timer
 
 #---------------------------------------------------------------------------------------------------
 # Purpose: Tick these functions after the match
