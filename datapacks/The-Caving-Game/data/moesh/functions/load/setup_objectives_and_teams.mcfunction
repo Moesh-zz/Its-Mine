@@ -38,11 +38,12 @@ scoreboard objectives add gameVariable dummy
 	# Game starts in lobby mode by default.
 	scoreboard players set GameState gameVariable 0
 	# 15 seconds until game
-	scoreboard players set Countdown gameVariable 300
+	scoreboard players set TimeToStartRound gameVariable 300
+	scoreboard players set TimeToEndRound gameVariable 12000
 	# The round is no longer starting. It started.
 	scoreboard players set StartingRound gameVariable 0
-	# 10 minute game timer
-	scoreboard players set TimeInTicks gameVariable 12000
+	# We want to be able to set variables from one location instead of multiple.
+	scoreboard players operation TimeInTicks gameVariable = TimeToStartRound gameVariable
 
 # Players may disconnect and reconnect during matches, let's ensure they're in the right match.
 scoreboard objectives remove SessionID
@@ -62,6 +63,9 @@ scoreboard objectives add reset trigger
 # Start round
 scoreboard objectives remove startRound
 scoreboard objectives add startRound trigger
+# Start round
+scoreboard objectives remove cancelStart
+scoreboard objectives add cancelStart trigger
 
 # Let's alert the devs.
 tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"Teams and objectives reset","color":"green"}]}

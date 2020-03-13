@@ -1,4 +1,4 @@
-# Called from: moesh:lobby/countdown
+# Called from: moesh:lobby/timer
 
 #---------------------------------------------------------------------------------------------------
 # Run math to determine is a full second has passed
