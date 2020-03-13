@@ -32,20 +32,22 @@ execute as @a[scores={startRound=1..}] at @s run function moesh:lobby/trigger_st
 # If a game start is happening, check to see if players want to cancel it
 execute as @a[scores={cancelStart=1..}] at @s run execute if score StartingRound gameVariable matches 1 run function moesh:lobby/trigger_cancel_start
 
-# Tick this every second if players will it.
+# Tick this every second if the players will it
 execute if score GameState gameVariable matches 0 if score StartingRound gameVariable matches 1 run function moesh:lobby/timer
 
 #---------------------------------------------------------------------------------------------------
 # Purpose: Tick these functions during the match
 #---------------------------------------------------------------------------------------------------
-# Let players run a GG command to end a game early
-# This next line is essentially protection of players against themselves. They can use
-# /trigger set gg 0, therefore disabling the gg trigger for themselves.
-execute if score GameState gameVariable matches 1 run scoreboard players set @a[scores={gg=..0}] gg 1
-execute if entity @a[scores={gg=1..}] if score GameState gameVariable matches 1 run function moesh:game/gg
 
 # Prevent players from leaving the play area
 execute as @a at @s unless entity @s[gamemode=spectator] if score GameState gameVariable matches 1 run function moesh:game/out_of_bounds
+
+# This next line is essentially protection of players against themselves. They can use
+# Let players run a GG command to end a game early
+# /trigger set gg 0, therefore disabling the gg trigger for themselves.
+execute if score GameState gameVariable matches 1 run scoreboard players set @a[scores={gg=..-1}] gg 0
+execute if score GameState gameVariable matches 1 run scoreboard players enable @a[scores={gg=0}] gg
+execute as @a[scores={gg=1..}] at @s if score GameState gameVariable matches 1 run function moesh:player/gg
 
 # Countdown the timer!
 execute if score GameState gameVariable matches 1 run function moesh:game/timer

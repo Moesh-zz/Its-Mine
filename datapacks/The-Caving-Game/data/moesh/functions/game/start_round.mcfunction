@@ -16,7 +16,7 @@ gamerule mobGriefing true
 # Kill all non-player, non-villager entities
 function moesh:load/clear_entities
 
-# Purpose: Establish a SessionID by using gametime
+# Purpose: Establish a SessionID by using game time
 execute store result score SessionID gameVariable run time query gametime
 scoreboard players operation @a SessionID = SessionID gameVariable
 
