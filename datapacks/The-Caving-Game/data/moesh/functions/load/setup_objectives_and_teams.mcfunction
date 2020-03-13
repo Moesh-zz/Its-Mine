@@ -45,8 +45,8 @@ scoreboard objectives add gameVariable dummy
 	scoreboard players set TimeInTicks gameVariable 12000
 
 # Players may disconnect and reconnect during matches, let's ensure they're in the right match.
-scoreboard objectives remove matchID
-scoreboard objectives add matchID dummy
+scoreboard objectives remove SessionID
+scoreboard objectives add SessionID dummy
 # Minecraft will tick this up when a player disconnects from the game.
 scoreboard objectives remove leaveGame
 scoreboard objectives add leaveGame minecraft.custom:minecraft.leave_game

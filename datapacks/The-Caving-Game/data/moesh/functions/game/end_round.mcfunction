@@ -15,9 +15,9 @@ gamemode spectator @a
 # Players cannot GG after the round has ended
 scoreboard players reset @a gg
 
-# The match has ended, let's updated the MatchID so players are properly handled
-execute store result score MatchID gameVariable run time query gametime
-scoreboard players operation @a matchID = MatchID gameVariable
+# The match has ended, let's updated the SessionID so players are properly handled
+execute store result score SessionID gameVariable run time query gametime
+scoreboard players operation @a SessionID = SessionID gameVariable
 
 # A bit of a hacky way to enable a map reset for all players.
 # This method also allows me to do a legacy reset, allowing players to play the map without resetting
