@@ -1,0 +1,8 @@
+{
+	"values": [
+		"moesh:load/clear_entities",
+		"moesh:load/set_rules",
+		"moesh:load/setup_objectives_and_teams",
+		"moesh:load/setup_testing"
+	]
+}
