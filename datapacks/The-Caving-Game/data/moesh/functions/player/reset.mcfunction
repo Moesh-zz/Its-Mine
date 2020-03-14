@@ -20,7 +20,6 @@ effect give @s minecraft:saturation 5 10 true
 execute if score GameState gameVariable matches 0 run gamemode adventure @s
 execute if score GameState gameVariable matches 0 run team join players @s
 execute if score GameState gameVariable matches 0 run scoreboard players enable @s spectate
-execute if score GameState gameVariable matches 0 run scoreboard players set @s spectate 0
 # Game is in-progress
 execute if score GameState gameVariable matches 1 run gamemode spectator @s
 execute if score GameState gameVariable matches 1 run team join specators @s

@@ -22,7 +22,6 @@ tellraw @a {"translate":"Thanks for playing! Use [%s] to play again.","color":"g
 
 # Update player triggers
 scoreboard players reset @a gg
-scoreboard players set @a reset 0
 scoreboard players enable @a reset
 
 #---------------------------------------------------------------------------------------------------
