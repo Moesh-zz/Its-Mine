@@ -30,10 +30,10 @@ execute if score GameState gameVariable matches 0 run scoreboard players enable 
 execute as @a[scores={startMatch=1..}] at @s run function moesh:lobby/trigger_start_match
 
 # If a game start is happening, check to see if players want to cancel it
-execute as @a[scores={cancelStart=1..}] at @s run execute if score StartingRound gameVariable matches 1 run function moesh:lobby/trigger_cancel_start
+execute as @a[scores={cancelStart=1..}] at @s run execute if score StartingMatch gameVariable matches 1 run function moesh:lobby/trigger_cancel_start
 
 # Tick this every second if the players will it
-execute if score GameState gameVariable matches 0 if score StartingRound gameVariable matches 1 run function moesh:lobby/timer
+execute if score GameState gameVariable matches 0 if score StartingMatch gameVariable matches 1 run function moesh:lobby/timer
 
 #---------------------------------------------------------------------------------------------------
 # Purpose: Tick these functions during the match

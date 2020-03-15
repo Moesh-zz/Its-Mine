@@ -13,7 +13,7 @@ team add players {"text":"Players"}
 
 team remove spectators
 team add spectators {"text":"Spectators","color":"gray"}
-# If you're on this team, you are always in the spectator gamemode.
+# If you're on this team, you are always in the spectator game mode.
 	team modify spectators collisionRule pushOtherTeams
 	team modify spectators deathMessageVisibility never
 	team modify spectators seeFriendlyInvisibles false
@@ -38,12 +38,12 @@ scoreboard objectives add gameVariable dummy
 	# Game starts in lobby mode by default.
 	scoreboard players set GameState gameVariable 0
 	# 15 seconds until game
-	scoreboard players set TimeToStartRound gameVariable 300
+	scoreboard players set TimeToStartMatch gameVariable 300
 	scoreboard players set TimeToEndRound gameVariable 12000
 	# The round is no longer starting. It started.
-	scoreboard players set StartingRound gameVariable 0
+	scoreboard players set StartingMatch gameVariable 0
 	# We want to be able to set variables from one location instead of multiple.
-	scoreboard players operation TimeInTicks gameVariable = TimeToStartRound gameVariable
+	scoreboard players operation TimeInTicks gameVariable = TimeToStartMatch gameVariable
 
 # Players may disconnect and reconnect during matches, let's ensure they're in the right match.
 scoreboard objectives remove SessionID

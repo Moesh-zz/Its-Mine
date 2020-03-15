@@ -40,5 +40,5 @@ scoreboard players enable @a[team=players] gg
 # We're using the same variable to count time in ticks.
 scoreboard players operation TimeInTicks gameVariable = TimeToEndRound gameVariable
 
-scoreboard players set StartingRound gameVariable 0
+scoreboard players set StartingMatch gameVariable 0
 scoreboard players set GameState gameVariable 1
