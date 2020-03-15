@@ -1,4 +1,4 @@
-# Called from: moesh:check_for_start_round_request
+# Called from: moesh:trigger_start_match
 
 #---------------------------------------------------------------------------------------------------
 # Purpose: TimeInTicks from 15 seconds and then start the round.
@@ -22,7 +22,7 @@ execute if score TimeInTicks gameVariable matches 60 run tellraw @a {"translate"
 execute if score TimeInTicks gameVariable matches 40 run tellraw @a {"translate":"%s %s...","color":"green","with":[{"text":">>>","color":"white"},{"score":{"name":"#InSeconds","objective":"gameVariable"},"color":"white"}]}
 execute if score TimeInTicks gameVariable matches 20 run tellraw @a {"translate":"%s %s...","color":"green","with":[{"text":">>>","color":"white"},{"score":{"name":"#InSeconds","objective":"gameVariable"},"color":"white"}]}
 # It's time to start the game!
-execute if score TimeInTicks gameVariable matches 0 run function moesh:game/start_round
+execute if score TimeInTicks gameVariable matches 0 run function moesh:game/start_match
 
 # This function is run every tick as long as this
 execute if score TimeInTicks gameVariable matches 1.. run scoreboard players remove TimeInTicks gameVariable 1

@@ -7,4 +7,4 @@ scoreboard players set StartingRound gameVariable 0
 
 # Setup new triggers for the player
 scoreboard players reset * cancelStart
-scoreboard players enable @a startRound
+scoreboard players enable @a startMatch

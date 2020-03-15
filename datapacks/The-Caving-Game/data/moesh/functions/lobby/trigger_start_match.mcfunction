@@ -10,7 +10,7 @@ scoreboard players set StartingRound gameVariable 1
 scoreboard players operation TimeInTicks gameVariable = TimeToStartRound gameVariable
 
 # Setup new triggers for the player
-scoreboard players reset * startRound
+scoreboard players reset * startMatch
 scoreboard players enable @a cancelStart
 
 # TODO: Remove after testing

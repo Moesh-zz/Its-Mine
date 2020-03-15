@@ -41,4 +41,4 @@ execute if score TimeInTicks gameVariable matches 600 run tellraw @a {"translate
 # Send message at 10 seconds left
 execute if score TimeInTicks gameVariable matches 200 run tellraw @a {"translate":"Match will end in %s seconds.","color":"green","with":[{"score":{"name":"#InSeconds","objective":"gameVariable"},"color":"white"}]}
 # End game
-execute if score TimeInTicks gameVariable matches 0 run function moesh:game/end_round
+execute if score TimeInTicks gameVariable matches 0 run function moesh:game/end_match

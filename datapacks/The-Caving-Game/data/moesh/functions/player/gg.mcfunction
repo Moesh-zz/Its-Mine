@@ -11,4 +11,4 @@ execute unless entity @a[team=players,gamemode=adventure] run tellraw @a {"trans
 team join spectators @s
 
 scoreboard players reset @a[scores={gg=1..}] gg
-execute unless entity @a[team=players] run function moesh:game/end_round
+execute unless entity @a[team=players] run function moesh:game/end_match

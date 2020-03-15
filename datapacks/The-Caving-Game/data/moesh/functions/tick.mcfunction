@@ -21,13 +21,13 @@ execute as @a[tag=!Registered] run tag @s add Registered
 # The commands became numerous enough to require further context for sub-states
 execute if score GameState gameVariable matches 0 run function moesh:lobby/tick
 
-# This line below is for players who want to be cheeky. If they ever set a score for startRound,
+# This line below is for players who want to be cheeky. If they ever set a score for startMatch,
 # go ahead and assume they want to start the round.
-execute if score GameState gameVariable matches 0 run scoreboard players set @a[scores={startRound=..-1}] startRound 0
-execute if score GameState gameVariable matches 0 run scoreboard players enable @a[scores={startRound=0}] startRound
+execute if score GameState gameVariable matches 0 run scoreboard players set @a[scores={startMatch=..-1}] startMatch 0
+execute if score GameState gameVariable matches 0 run scoreboard players enable @a[scores={startMatch=0}] startMatch
 
 # If a game is not starting, check to see if players want to start a game
-execute as @a[scores={startRound=1..}] at @s run function moesh:lobby/trigger_start_round
+execute as @a[scores={startMatch=1..}] at @s run function moesh:lobby/trigger_start_match
 
 # If a game start is happening, check to see if players want to cancel it
 execute as @a[scores={cancelStart=1..}] at @s run execute if score StartingRound gameVariable matches 1 run function moesh:lobby/trigger_cancel_start

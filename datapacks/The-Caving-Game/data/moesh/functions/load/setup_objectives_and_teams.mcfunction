@@ -61,8 +61,8 @@ scoreboard objectives add gg trigger
 scoreboard objectives remove reset
 scoreboard objectives add reset trigger
 # Start round
-scoreboard objectives remove startRound
-scoreboard objectives add startRound trigger
+scoreboard objectives remove startMatch
+scoreboard objectives add startMatch trigger
 # Start round
 scoreboard objectives remove cancelStart
 scoreboard objectives add cancelStart trigger
