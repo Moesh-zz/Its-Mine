@@ -43,5 +43,9 @@ gamerule spawnRadius 7
 # Submitted for the approval of the Midnight Society...
 time set midnight
 
+# The vanilla datapack has only a few required items to make the game work, like fluids.
+# We'll replace this in our datapack.
+datapack disable vanilla
+
 # Let's alert the devs.
 tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"Gamerules and world options set","color":"green"}]}
