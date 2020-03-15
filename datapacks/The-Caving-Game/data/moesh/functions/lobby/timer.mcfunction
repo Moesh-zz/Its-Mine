@@ -1,7 +1,7 @@
 # Called from: moesh:trigger_start_match
 
 #---------------------------------------------------------------------------------------------------
-# Purpose: TimeInTicks from 15 seconds and then start the round.
+# Purpose: TimeInTicks from 15 seconds and then start the match.
 #---------------------------------------------------------------------------------------------------
 # Load variables into the math function and run it.
 scoreboard players operation #InSeconds gameVariable = TimeInTicks gameVariable

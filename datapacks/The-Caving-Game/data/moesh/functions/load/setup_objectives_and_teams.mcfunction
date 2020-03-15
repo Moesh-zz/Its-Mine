@@ -39,7 +39,7 @@ scoreboard objectives add gameVariable dummy
 	scoreboard players set GameState gameVariable 0
 	# 15 seconds until game
 	scoreboard players set TimeToStartMatch gameVariable 300
-	scoreboard players set TimeToEndRound gameVariable 12000
+	scoreboard players set TimeToEndMatch gameVariable 12000
 	# The round is no longer starting. It started.
 	scoreboard players set StartingMatch gameVariable 0
 	# We want to be able to set variables from one location instead of multiple.
@@ -54,16 +54,16 @@ scoreboard objectives add leaveGame minecraft.custom:minecraft.leave_game
 
 # Player triggers
 # These are ALWAYS reset when they are enabled. Players have no score by default.
-# GG
+# Enabled during the match. Players are moved to spectator if they want to gg out early.
 scoreboard objectives remove gg
 scoreboard objectives add gg trigger
-# Reset
+# Players can use this to reset the level after a match has conclused.
 scoreboard objectives remove reset
 scoreboard objectives add reset trigger
-# Start round
+# Start match
 scoreboard objectives remove startMatch
 scoreboard objectives add startMatch trigger
-# Start round
+# Cancel start 
 scoreboard objectives remove cancelStart
 scoreboard objectives add cancelStart trigger
 

@@ -38,7 +38,7 @@ scoreboard players enable @a[team=players] gg
 # Purpose: Update game state
 #---------------------------------------------------------------------------------------------------
 # We're using the same variable to count time in ticks.
-scoreboard players operation TimeInTicks gameVariable = TimeToEndRound gameVariable
+scoreboard players operation TimeInTicks gameVariable = TimeToEndMatch gameVariable
 
 scoreboard players set StartingMatch gameVariable 0
 scoreboard players set GameState gameVariable 1

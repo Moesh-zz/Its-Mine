@@ -1,7 +1,7 @@
 # Called from: moesh:tick
 
 #---------------------------------------------------------------------------------------------------
-# Purpose: Cancel the timer to start a round
+# Purpose: Cancel the timer to start a match
 #---------------------------------------------------------------------------------------------------
 scoreboard players set StartingMatch gameVariable 0
 

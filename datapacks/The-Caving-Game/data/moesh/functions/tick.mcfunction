@@ -22,7 +22,7 @@ execute as @a[tag=!Registered] run tag @s add Registered
 execute if score GameState gameVariable matches 0 run function moesh:lobby/tick
 
 # This line below is for players who want to be cheeky. If they ever set a score for startMatch,
-# go ahead and assume they want to start the round.
+# go ahead and assume they want to start the match.
 execute if score GameState gameVariable matches 0 run scoreboard players set @a[scores={startMatch=..-1}] startMatch 0
 execute if score GameState gameVariable matches 0 run scoreboard players enable @a[scores={startMatch=0}] startMatch
 
