@@ -15,7 +15,7 @@ effect give @s minecraft:absorption 3 4 false
 effect give @s minecraft:instant_health 3 10 true
 effect give @s minecraft:saturation 5 10 true
 
-# Set players gamemode
+# Set players game mode
 # Game is in lobby mode and make them join the right team
 execute if score GameState gameVariable matches 0 run gamemode adventure @s
 execute if score GameState gameVariable matches 0 run team join players @s
