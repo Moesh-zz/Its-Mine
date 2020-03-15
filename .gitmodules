@@ -1,6 +1,3 @@
 [submodule "./"]
 	path = ./
 	url = https://github.com/McTsts/Ender-Chest-GUI
-[submodule "datapacks/Ender-Chest-GUI"]
-	path = datapacks/Ender-Chest-GUI
-	url = https://github.com/McTsts/Ender-Chest-GUI.git
