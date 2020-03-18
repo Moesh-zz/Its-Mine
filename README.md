@@ -1,16 +1,16 @@
 # The Caving Game (working title)
 
 ### Introduction
-There's ore down there! The player who collects the most ore in 10 minutes AND brings them back, wins! 
+There's ore down there! The player who collects the most ore in 11 minutes AND turns them in, wins! 
 
 ### Description
-This focus of them is game is on the survival Minecraft caving experience. Players will enter dangerous caves (or other locales) to retrieve ore and bring it back to the survive. Problem is, the places have been overrun with mobs.
+This focus of this game is on the survival Minecraft caving experience. Players will enter dangerous locations to retrieve ore and bring it back to the Wandering Trader. Problem is, these places have been overrun with mobs.
 
 This is a race, first and foremost. Players cannot attack each other... directly.
 
-Players are very mobile in this game. They can choose between Scaffolding, Elytra (with Fireworks), or a few Ender Pearls. These items are refilled when they return to a bank.
+Players are very mobile in this game. They are equiped with scaffolding which is refilled by when they return to the Trader, or from mob drops.
 
-All mob drops will be changed to low-value food, such as melon or bread. More difficult mobs will drop high value food. For example, Magma Slimes will drop cooked food.
+All mob drops will be changed to low-value items and food, such as melon or bread. More difficult mobs will drop high value food. For example, Magma Slimes will drop cooked food.
 
 ### Core values
 - This is a race, not a fight.
@@ -23,22 +23,24 @@ All mob drops will be changed to low-value food, such as melon or bread. More di
 _This is a living document, everything is suspectible to change._
 
 ## Want to make an level for this game?
-I am creating this world and datapack so others can feel free to create a level for something without having to also create a data pack. My hope is to make it so you can apply it to your world and it just works. We'll see how that goes. :)
+I am creating this world and datapack so creators working with Minecraft can learn more about the creation process, and maybe get inspired to make their own game. My hope is create a datapack you can apply to your world, and it just works.
+
+We'll see how that goes. :)
 
 ### Design advice
 The arena you create should feel dangerous. The player should feel like they are entering somewhere that has been overrun with monsters. The most valuable ores should be placed where the most danger is likely to be. Make ample use of monster spawners.
 
-It is OK to design a classic vanilla cave system, old mines, or something very abstract and wild! The important thing is that the placement of your the ores is compelling.
+It is OK to design a classic vanilla cave system, old mines, or something very abstract and wild! The important thing is that the placement of your ores is compelling.
 
 ### Requirements
 _All arenas MUST meet these requirements._
 - Must have ores, see the Scoring section below.
 - Must have monsters (as they drop food and other useful items).
-- Must have an Lectern. This is be used as player's menu.
+- Must have an Lectern. This is be used as player's menu. Did you know books can be read in spectator mode?
 - Must have at least one Wandering Trader (
 	- Required attributes: Glowing:1b, Invulernable:1b
 	- Can be named whatever you like. Can have NoAI on or off, up to you
-	- Example summon command: ```/summon minecraft:wandering_trader ~ ~ ~ {Invulnerable:1b,Glowing:1b,CustomNameVisible:1b,NoAI:1b,CustomName:'{"text":"Resupply"}'}```
+	- Example summon command: ```/summon minecraft:wandering_trader ~ ~ ~ {Invulnerable:1b,Glowing:1b,CustomNameVisible:1b,NoAI:1b,CustomName:'{"text":"Shubby"}'}```
 - All arenas must be fully encased by at least one bedrock layer
 	- This make resetting the level very, very quick by avoiding recalculating sky light.
 	- The level should feel oppressive, sky is a bit too comforting.
@@ -52,12 +54,12 @@ _All arenas MUST meet these requirements._
 - All non-ore blocks will drop Glass instead of their usual drop.
 - All mobs will drop food, torches, and items useful to players depending on their class.
 - Players will have a 60 second grace period to return to an Wandering Trader at the end of the game. If they die during this period, they are moved to spectator mode.
-- Players will be able to travel through your map while the game is in lobby mode. They will have not be invulnerable, will respawn instantly, and have an item which allows them to teleport to back to the Ender Chest.
+- Players will be able to travel through your map while the game is in lobby mode. They will be invulnerable, will respawn instantly, and have an item which allows them to teleport to back to the Ender Chest.
 
 ## Scoring
 A player's score is only revealed at the end of the game, for dramatic effect. They are counted and added in the order listed below.
 
-Ores are only counted if they are turned in to an Iron Golem!
+Ores are only counted if they are turned in to a Trader!
 
 ### Point values
 - Coal (item): 1 point
@@ -108,11 +110,11 @@ Fly anywhere, be a daredevil.
 Items:
 - **Elytra** (replaceitem chest slot)
 - **Fireworks** * 3 (given)
-	- Medium chance to be dropped by mobs
+	- Very low chance to be dropped by mobs
 
 ### Ender Pearls
 Skip the flight, get there instantly.
 
 Items:
 - **Ender Pearls** * 3 (given)
-	- Medium chance to be dropped by mobs
+	- Very low chance to be dropped by mobs
