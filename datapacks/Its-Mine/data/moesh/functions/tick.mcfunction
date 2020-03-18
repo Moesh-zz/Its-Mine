@@ -51,6 +51,8 @@ execute if score GameState gameVariable matches 1 run scoreboard players set @a[
 execute if score GameState gameVariable matches 1 run scoreboard players enable @a[scores={gg=0}] gg
 execute as @a[scores={gg=1..}] at @s if score GameState gameVariable matches 1 run function moesh:player/gg
 
+execute if score GameState gameVariable matches 1 run execute as @a at @s run function moesh:player/check_for_trader
+
 # Countdown the timer!
 execute if score GameState gameVariable matches 1 run function moesh:game/timer
 
