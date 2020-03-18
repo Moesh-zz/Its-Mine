@@ -14,14 +14,11 @@ execute as @a[tag=!Registered] at @s run function moesh:player/set_objectives
 execute as @a[tag=!Registered] run tellraw @s {"text":"Welcome to The Caving Game!"}
 execute as @a[tag=!Registered] run tag @s add Registered
 
-function moesh:game/trader/check_for_nearby_players
+function moesh:player/chutes
 
 #---------------------------------------------------------------------------------------------------
 # Purpose: Tick these functions during the lobby stage
 #---------------------------------------------------------------------------------------------------
-
-# The commands became numerous enough to require further context for sub-states
-execute if score GameState gameVariable matches 0 run function moesh:lobby/tick
 
 # This line below is for players who want to be cheeky. If they ever set a score for startMatch,
 # go ahead and assume they want to start the match.

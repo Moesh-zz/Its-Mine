@@ -69,6 +69,10 @@ scoreboard objectives add Emerald dummy
 scoreboard objectives remove LapisLazuli
 scoreboard objectives add LapisLazuli dummy
 
+# WHEN DOES THE PLAYER SNEAK?!
+scoreboard objectives remove sneakTime
+scoreboard objectives add sneakTime minecraft.custom:minecraft.sneak_time
+
 # Players may disconnect and reconnect during matches, let's ensure they're in the right match.
 scoreboard objectives remove SessionID
 scoreboard objectives add SessionID dummy
