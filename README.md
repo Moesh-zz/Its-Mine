@@ -1,4 +1,5 @@
-# The Caving Game (working title)
+# It's Mine!
+A speed caving game made for Minecraft: Java Edition.
 
 ### Introduction
 There's ore down there! The player who collects the most ore in 11 minutes AND turns them in, wins! 

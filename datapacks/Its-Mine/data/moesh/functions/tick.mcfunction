@@ -14,6 +14,8 @@ execute as @a[tag=!Registered] at @s run function moesh:player/set_objectives
 execute as @a[tag=!Registered] run tellraw @s {"text":"Welcome to The Caving Game!"}
 execute as @a[tag=!Registered] run tag @s add Registered
 
+function moesh:game/trader/check_for_nearby_players
+
 #---------------------------------------------------------------------------------------------------
 # Purpose: Tick these functions during the lobby stage
 #---------------------------------------------------------------------------------------------------

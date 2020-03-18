@@ -44,6 +44,30 @@ scoreboard objectives add gameVariable dummy
 	scoreboard players set StartingMatch gameVariable 0
 	# We want to be able to set variables from one location instead of multiple.
 	scoreboard players operation TimeInTicks gameVariable = TimeToStartMatch gameVariable
+	# Set-up ore values
+	scoreboard players set #Coal gameVariable 1
+	scoreboard players set #IronOre gameVariable 2
+	scoreboard players set #GoldOre gameVariable 22
+	scoreboard players set #Redstone gameVariable 8
+	scoreboard players set #Diamond gameVariable 62
+	scoreboard players set #Emerald gameVariable 127
+	scoreboard players set #LapisLazuli gameVariable 56
+
+# We must keep track of all different kinds of scores for players.
+scoreboard objectives remove Coal
+scoreboard objectives add Coal dummy
+scoreboard objectives remove IronOre
+scoreboard objectives add IronOre dummy
+scoreboard objectives remove GoldOre
+scoreboard objectives add GoldOre dummy
+scoreboard objectives remove Redstone
+scoreboard objectives add Redstone dummy
+scoreboard objectives remove Diamond
+scoreboard objectives add Diamond dummy
+scoreboard objectives remove Emerald
+scoreboard objectives add Emerald dummy
+scoreboard objectives remove LapisLazuli
+scoreboard objectives add LapisLazuli dummy
 
 # Players may disconnect and reconnect during matches, let's ensure they're in the right match.
 scoreboard objectives remove SessionID
