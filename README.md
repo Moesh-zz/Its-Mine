@@ -34,11 +34,11 @@ It is OK to design a classic vanilla cave system, old mines, or something very a
 _All arenas MUST meet these requirements._
 - Must have ores, see the Scoring section below.
 - Must have monsters (as they drop food and other useful items).
-- Must have an Ender Chest. This is be used as player's menu.
-- Must have at least one Iron Golem
+- Must have an Lectern. This is be used as player's menu.
+- Must have at least one Wandering Trader (
 	- Required attributes: Glowing:1b, Invulernable:1b
 	- Can be named whatever you like. Can have NoAI on or off, up to you
-	- Example summon command: ```/summon minecraft:iron_golem ~ ~ ~ {Invulnerable:1b,Glowing:1b,CustomNameVisible:1b,NoAI:1b,CustomName:'{"text":"Resupply"}'}```
+	- Example summon command: ```/summon minecraft:wandering_trader ~ ~ ~ {Invulnerable:1b,Glowing:1b,CustomNameVisible:1b,NoAI:1b,CustomName:'{"text":"Resupply"}'}```
 - All arenas must be fully encased by at least one bedrock layer
 	- This make resetting the level very, very quick by avoiding recalculating sky light.
 	- The level should feel oppressive, sky is a bit too comforting.
@@ -48,10 +48,10 @@ _All arenas MUST meet these requirements._
 
 ### Design quirks you should consider
 - Players will be glowing, and can see each other through walls
-- The Iron Golem location is glowing, and has a distinct outline and color from players
+- The Trader is glowing, and has a distinct outline and color from players
 - All non-ore blocks will drop Glass instead of their usual drop.
 - All mobs will drop food, torches, and items useful to players depending on their class.
-- Players will have a 60 second grace period to return to an Iron Golem at the end of the game. If they die during this period, they are moved to spectator mode.
+- Players will have a 60 second grace period to return to an Wandering Trader at the end of the game. If they die during this period, they are moved to spectator mode.
 - Players will be able to travel through your map while the game is in lobby mode. They will have not be invulnerable, will respawn instantly, and have an item which allows them to teleport to back to the Ender Chest.
 
 ## Scoring
@@ -86,17 +86,16 @@ All players are equipped with these items:
 	- Unbreakable
 	- Given back when dropped
 - **Torches** * 8 (given)
-	- Refilled up to 8 at an Iron Golem location
+	- Refilled up to 8 at an Trader location
 	- High chance to be dropped by mobs
 - **Food** * 2 (given)
-	- Refilled up to 2 an Iron Golem location
+	- Refilled up to 2 an Trader location
 	- High chance to be dropped by mobs
 
 
-## Item sets
-Players may choose between three item sets before the game starts.
+## Items (HIGHLY SUBJECT TO CHANGE!!!!)
 
-### Scaffolding (default)
+### Scaffolding
 Weave a wooden web of troubles.
 
 Items:
@@ -109,7 +108,6 @@ Fly anywhere, be a daredevil.
 Items:
 - **Elytra** (replaceitem chest slot)
 - **Fireworks** * 3 (given)
-	- Refilled up to 4 at an Iron Golem
 	- Medium chance to be dropped by mobs
 
 ### Ender Pearls
@@ -117,5 +115,4 @@ Skip the flight, get there instantly.
 
 Items:
 - **Ender Pearls** * 3 (given)
-	- Refilled up to at an Iron Golem
 	- Medium chance to be dropped by mobs
