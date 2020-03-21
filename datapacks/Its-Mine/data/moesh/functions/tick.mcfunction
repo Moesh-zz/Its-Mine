@@ -50,6 +50,9 @@ execute as @a[scores={gg=1..}] at @s if score GameState gameVariable matches 1 r
 
 execute if score GameState gameVariable matches 1 run execute as @a at @s run function moesh:player/check_for_trader
 
+# Kill mobs who go near Trader Llamas
+execute as @e[type=minecraft:trader_llama] at @s anchored eyes run function moesh:game/convert_hostiles_to_harmless
+
 # Countdown the timer!
 execute if score GameState gameVariable matches 1 run function moesh:game/timer
 
