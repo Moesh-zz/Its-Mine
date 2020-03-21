@@ -3,6 +3,7 @@
 		"moesh:load/clear_entities",
 		"moesh:load/set_rules",
 		"moesh:load/setup_objectives_and_teams",
+		"moesh:load/summon_trader_and_llamas",
 		"moesh:load/setup_testing"
 	]
 }
