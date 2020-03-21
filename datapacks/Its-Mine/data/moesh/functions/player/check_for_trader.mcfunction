@@ -1,4 +1,4 @@
-# Called from: minecraft:tick
+# Called from: moesh:tick
 
 #---------------------------------------------------------------------------------------------------
 # Purpose: Take ores from players and keep track until the end of the game.
@@ -12,7 +12,7 @@ execute if entity @e[type=minecraft:wandering_trader,distance=..2] run tag @s[ta
 
 # Execute some functions when the player is near the trader
 execute if entity @s[tag=WantsToTrade] run function moesh:game/take_ores
-# TODO: execute if entity @s[tag=WantsToTrade] run function moesh:game/refill_items_and_health
+execute if entity @s[tag=WantsToTrade] run function moesh:player/refill_items_and_health
 
 # The player has been near the trader, let's lock them out after this tick.
 tag @s[tag=WantsToTrade,tag=!AlreadyTraded] add AlreadyTraded
