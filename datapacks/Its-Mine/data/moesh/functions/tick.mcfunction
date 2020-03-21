@@ -12,8 +12,11 @@ execute as @a[scores={leaveGame=1..}] at @s run function moesh:player/left_game
 execute as @a[tag=!Registered] at @s run function moesh:player/reset
 execute as @a[tag=!Registered] at @s run function moesh:player/set_objectives
 execute as @a[tag=!Registered] run tellraw @s {"text":"Welcome to The Caving Game!"}
+
+
 execute as @a[tag=!Registered] run tag @s add Registered
 
+# Players can always use scaffolding as chutes.
 function moesh:player/chutes
 
 #---------------------------------------------------------------------------------------------------
