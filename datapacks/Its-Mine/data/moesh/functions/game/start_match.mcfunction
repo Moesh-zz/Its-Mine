@@ -15,6 +15,7 @@ gamerule mobGriefing true
 # Set map rules and clean-up
 # Kill all non-player, non-villager entities
 function moesh:load/clear_entities
+function moesh:load/summon_trader_and_llamas
 
 # Purpose: Establish a SessionID by using game time
 execute store result score SessionID gameVariable run time query gametime
@@ -29,6 +30,7 @@ playsound minecraft:event.raid.horn master @a 217 100 195 999999
 
 # Clear the player's items and effects, refill their bars
 function moesh:player/reset
+gamemode survival @a[team=players]
 
 # Update player triggers
 scoreboard players reset * cancelStart
