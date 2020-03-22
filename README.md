@@ -1,75 +1,109 @@
+[![github-license-badge]](https://github.com/Arcensoth/language-mcfunction) [![discord-chat-badge]](https://discord.gg/ZrSgHq9)
+
 # It's Mine!
-A speed caving game made for Minecraft: Java Edition.
+*This is a game made with a [datapack](https://minecraft.gamepedia.com/Data_pack) for [Minecraft: Java Edition](https://www.minecraft.net/store/minecraft-java-edition). It is designed to allow anyone to build a level, activate the datapack, and play! I believe that if you can open Minecraft, you can just as easily do this. I hope you are inspired to create something new!*
 
-### Introduction
-There's ore down there! The player who collects the most ore in 11 minutes AND turns them in, wins! 
+## Description
 
-### Description
-This focus of this game is on the survival Minecraft caving experience. Players will enter dangerous locations to retrieve ore and bring it back to the Wandering Trader. Problem is, these places have been overrun with mobs.
+This game focuses on the experience of [mining](https://minecraft.gamepedia.com/Tutorials/Exploring_caverns) (also known as caving) in Minecraft. Players will traverse through dangerous locales to dig up ore. They will fight dangerous enemies who drop food and other helpful items.
 
-This is a race, first and foremost. Players cannot attack each other... directly.
+To win, bring the most ore to a Wandering Trader within the time limit!
 
-Players are very mobile in this game. They are equiped with scaffolding which is refilled by when they return to the Trader, or from mob drops.
+## Table of contents
+- [It's Mine!](#it-s-mine-)
+  * [Description](#description)
+  * [Table of contents](#table-of-contents)
+- [How to design an level](#how-to-design-an-level)
+  * [Design directions](#design-directions)
+    + [Core values](#core-values)
+    + [Technical requirements](#technical-requirements)
+    + [Other details to take into consideration](#other-details-to-take-into-consideration)
+  * [Altered global features](#altered-global-features)
+  * [Items given to the player](#items-given-to-the-player)
+  * [Items which drop](#items-which-drop)
 
-All mob drops will be changed to low-value items and food, such as melon or bread. More difficult mobs will drop high value food. For example, Magma Slimes will drop cooked food.
+# How to design an level
+_This is a living document. Everything is suspectible to change._
+
+## Design directions
+Player should feel like they are somewhere dangerous; overrun with monsters. The most valuable ores are where the most danger is likely to be. 
+
+It is OK to design a classic vanilla cave system, old mines, or something very abstract and wild! The rules and features of _It's Mine!_ allow for a variety of different ideas! Perhaps a level with only a handful of ores? Something entirely vertical?
+
+The important thing is compelling placement of the ores and hostiles in your level.
 
 ### Core values
+When creating your level, consider the core values I used to design every gameplay feature:
 - This is a race, not a fight.
 - The player is entering a dangerous place.
 - The player is very mobile.
 - All drops are useful to the player.
 
-# Living design document
+I've put a great deal of consideration and intent into these values. Games are complex, heaving things. Without knowing where we want to go, we could  easily find ourselves spiraling out of control with feature creep. These values have provided guidance when I've needed to pass judgment on my design.
 
-_This is a living document, everything is suspectible to change._
+For example, during this development process, I decided to make a drastic change to the items I give to the player. By removing Ender Pearls and Elytra as loadout items, I drastically reduced the player's mobility. **This went against a core value.** In order to compensate for this decision, I modified Scaffolding to shoot players upwards, bringing back quite a bit of mobility. Then I also made Ender Pearls a rare drop for hostile mobs.
 
-## Want to make an level for this game?
-I am creating this world and datapack so creators working with Minecraft can learn more about the creation process, and maybe get inspired to make their own game. My hope is create a datapack you can apply to your world, and it just works.
+To recap, I made a design choice which broke a core value: "The player is very mobile." This meant I needed find a solution which returned mobility to the players while also meeting other unforeseen requirements.
 
-We'll see how that goes. :)
+The power of having a value-driven project is freedom and autonomy when designing features. I feel more confident in all of my decisions, as I have created values to hold them up against.
 
-### Design advice
-The arena you create should feel dangerous. The player should feel like they are entering somewhere that has been overrun with monsters. The most valuable ores should be placed where the most danger is likely to be. Make ample use of monster spawners.
-
-It is OK to design a classic vanilla cave system, old mines, or something very abstract and wild! The important thing is that the placement of your ores is compelling.
-
-### Requirements
-_All arenas MUST meet these requirements._
-- Must have ores, see the Scoring section below.
-- Must have monsters (as they drop food and other useful items).
-- Must have an Lectern. This is be used as player's menu. Did you know books can be read in spectator mode?
-- Must have at least one Wandering Trader (
-	- Required attributes: Glowing:1b, Invulernable:1b
-	- Can be named whatever you like. Can have NoAI on or off, up to you
-	- Example summon command: ```/summon minecraft:wandering_trader ~ ~ ~ {Invulnerable:1b,Glowing:1b,CustomNameVisible:1b,NoAI:1b,CustomName:'{"text":"Shubby"}'}```
-- All arenas must be fully encased by at least one bedrock layer
-	- This make resetting the level very, very quick by avoiding recalculating sky light.
-	- The level should feel oppressive, sky is a bit too comforting.
+### Technical requirements
+_All levels MUST meet these requirements._
+- **Must have ores**
+	- Ores: Coal, Iron Ore, Gold Ore, Redstone, Diamond, and Lapis Lazuli
+	- Only way to score points
+	- See [scoring section](#Scoring) for point values
+- **Must have [hostile mobs](https://minecraft.gamepedia.com/Mob#Hostile_mobs)**
+	- Hostile mobs drop food, torches, and scaffolding
+	- Rare drops include: Ender Pearls
+- **Must have at least one [lectern](https://minecraft.gamepedia.com/Lectern)**
+	- Will be used as a main menu
+	- Only the lectern must exist, the books will be populated
+	- _Notes: A second or third lectern may be created for credits and help._
+	- Multiple lectern with the menu book can exist, each defined location will be populated
+- **Must have at least one [Wandering Trader](https://minecraft.gamepedia.com/Wandering_Trader)**
+	- Required attributes: `Glowing:1b, Invulernable:1b`
+	- `NoAI:1b` is not required
+	- Must always be accessible by players during the last 60 seconds of the match
+- **Must have at least one [Trader Llama](https://minecraft.gamepedia.com/)**
+	- Required attributes: `Glowing:1b, Invulnerable:1b`
+	- Trader Llamas turn all potentially hostile mobs into rabbits (5 block radius from eyes)
+- **Must be fully encased by at least one bedrock layer**
+	- This make resetting the level very, very quick by avoiding sky light recalculations.
+	- The level should feel a bit oppressive. The sky is a bit too comforting.
 	- Going "underground" is core to the caving experience.
-- Area size cannot exceed 30x30 chunks. _(A level that large would be very excessive. I've found 96x96x96 blocks to be more than enough space to create an interesting level.)_
+- **Must not exceed 30x30 chunks.**
+	- A region file is 32x32 chunks, there is more technical risk when an level crosses the border of a region files
+	- 30x30 chunks is an excessively large level, that's 480x256x480 blocks!
+	- I've found 96x96x96 blocks to be more than enough space to create an interesting level.
 
+### Other details to take into consideration
+_It's Mine!_ has altered Minecraft's survival gameplay. These alterations could have an impact on your level design choies. Each alteration has been made with the intention to focus the player's attention on mining and going fast._
 
-### Design quirks you should consider
-- Players will be glowing, and can see each other through walls
-- The Trader is glowing, and has a distinct outline and color from players
-- All non-ore blocks will drop Glass instead of their usual drop.
-- All mobs will drop food, torches, and items useful to players depending on their class.
-- Players will have a 60 second grace period to return to an Wandering Trader at the end of the game. If they die during this period, they are moved to spectator mode.
-- Players will be able to travel through your map while the game is in lobby mode. They will be invulnerable, will respawn instantly, and have an item which allows them to teleport to back to the Ender Chest.
+- Players can kill mobs with 1-2 hits from their Pickaxe
+- Players have the equivalent of full diamond armor, and twice their health, when holding their shield in their offhand. They are not meant to die quickly.
+- Players will glow, and can see each other through walls
+- The Wandering Trader and Trader Llamas will glow, and have a distinct outline and color from players
+- All non-ore blocks will drop Scaffolding instead of their usual drop _(subject to change)_
+- Players will have a 60 second grace period to return to an Wandering Trader at the end of the game. If they die during this period, they are moved to spectator mode and their ores remain on the ground.
+- While in lobby state, players...
+	- ...can travel through your level
+	- ...will have all of their ingame items to study
+	- ...will be in adventure mode (cannot place or break blocks) 
+	- ...will not be invulnerable
+	- ...will respawn instantly
+	- ...have the ability to teleport back to the Lectern
+- Players cannot attack each other... directly.
 
-## Scoring
-A player's score is only revealed at the end of the game, for dramatic effect. They are counted and added in the order listed below.
+## Altered global features
+Some Minecraft features, which players may expect to work as normal, have been altered. 
 
-Ores are only counted if they are turned in to a Trader!
+- Trader Llamas looks for potentially hostile mobs within a 5 block radius, and turns them into rabbits
+- Scaffolding applies the levitation effect when players is standing inside of them (also stops when sneaking)
+- The vanilla datapack has been disabled to remove the default advancements and recipes
+Elements required to make Minecraft work as players expect have been replicated
+- Players will only have to walk near a Wandering Trader to trigger the "turn-in/refill" sequence instead of trading with them
 
-### Point values
-- Coal (item): 1 point
-- Iron Ore (block): 2 points
-- Gold Ore (block): 22 points
-- Redstone (item): 8 points (potential for 8 to 48 points per block found)
-- Diamond: 62 points
-- Emerald: 127 points
-- Lapis Lazuli = 56 (potential for 224 to 504 points per block found)
 
 ## Items given to the player
 
@@ -88,34 +122,19 @@ All players are equipped with these items:
 		- +20 Armor
 	- Unbreakable
 	- Given back when dropped
+- **Chainmail Boots** (replaces feet armor slot)
+	- Feather Falling (level 4)
+	- Unbreakable
+	- Curse of Binding
+
+Players are given these items when near a Wandering Trader
 - **Torches** * 8 (given)
-	- Refilled up to 8 at an Trader location
-	- High chance to be dropped by mobs
 - **Food** * 2 (given)
-	- Refilled up to 2 an Trader location
-	- High chance to be dropped by mobs
+- **Scaffolding** * 8 (given)
 
-
-## Items (HIGHLY SUBJECT TO CHANGE!!!!)
-
-### Scaffolding
-Weave a wooden web of troubles.
-
-Items:
-- **Scaffolding** (given)
-	- Refills at a medium rate.
-
-### Elytra
-Fly anywhere, be a daredevil.
-
-Items:
-- **Elytra** (replaceitem chest slot)
-- **Fireworks** * 3 (given)
-	- Very low chance to be dropped by mobs
-
-### Ender Pearls
-Skip the flight, get there instantly.
-
-Items:
-- **Ender Pearls** * 3 (given)
-	- Very low chance to be dropped by mobs
+## Items which drop
+These are the only items which can be dropped by mobs or blocks.
+- **Food**: Normal chance to be dropped by hostile mobs
+- **Scaffolding**: Drops from blocks (one to one) and hostile mobs
+- **Torches**: Normal chance to be dropped by hostile mobs
+- **Ender Pearls**: Very low chance to be dropped by hostile mobs
