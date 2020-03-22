@@ -1,7 +1,7 @@
 # It's Mine!
 *This is a game made with a [datapack](https://minecraft.gamepedia.com/Data_pack) for [Minecraft: Java Edition](https://www.minecraft.net/store/minecraft-java-edition). It is designed to allow anyone to build a level, activate the datapack, and play! I believe that if you can open Minecraft, you can just as easily do this. I hope you are inspired to create something new!*
 
-![Dinner Party Games](https://img.shields.io/discord/204792442225033216?label=Dinner Party Games&style=for-the-badge)
+![Discord](https://img.shields.io/discord/204792442225033216?label=Dinner%20Party%20Games)
 
 ## Description
 
