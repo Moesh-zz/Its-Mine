@@ -13,8 +13,8 @@ execute as @a[tag=!Registered] at @s run function moesh:player/reset
 execute as @a[tag=!Registered] at @s run function moesh:player/set_objectives
 execute as @a[tag=!Registered] run tellraw @s {"text":"Welcome to The Caving Game!"}
 
-
-execute as @a[tag=!Registered] run tag @s add Registered
+# Player cannot drop items
+function moesh:player/return_dropped_items
 
 # Players can always use scaffolding as chutes.
 function moesh:player/chutes

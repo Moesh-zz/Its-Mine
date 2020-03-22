@@ -80,6 +80,11 @@ scoreboard objectives add SessionID dummy
 scoreboard objectives remove leaveGame
 scoreboard objectives add leaveGame minecraft.custom:minecraft.leave_game
 
+# UUID = Universally Unique Identifier. Entities have these for...identification.
+# Check out https://www.uuidgenerator.net/version4 for more information. Use UUID4.
+scoreboard objectives remove UUID
+scoreboard objectives add UUID dummy
+
 # Player triggers
 # These are ALWAYS reset when they are enabled. Players have no score by default.
 # Enabled during the match. Players are moved to spectator if they want to gg out early.
