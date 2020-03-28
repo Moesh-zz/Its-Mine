@@ -28,8 +28,8 @@ scoreboard players operation @a SessionID = SessionID gameVariable
 tellraw @a {"translate":"%s Get the most ores to win!","color":"green","with":[{"text":">>>","color":"white"}]}
 playsound minecraft:event.raid.horn master @a 217 100 195 999999
 
-# Clear the player's items and effects, refill their bars
-function moesh:player/reset
+# Clear the player's items and effects, give them items, refill their health and hunger
+execute as @a[team=players] run function moesh:player/refill_items_and_health
 gamemode survival @a[team=players]
 
 # Update player triggers
