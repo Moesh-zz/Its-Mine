@@ -14,6 +14,9 @@ execute unless entity @a[nbt={Inventory:[{id:"minecraft:diamond_pickaxe"}]}] run
 # Replace offhand slot Shield if player does not have a shield in their inventory
 execute unless entity @a[nbt={Inventory:[{id:"minecraft:shield"}]}] run replaceitem entity @s weapon.offhand minecraft:shield{Unbreakable:1b,AttributeModifiers:[{AttributeName:"generic.maxHealth",Name:"generic.maxHealth",Amount:20,Operation:0,UUIDLeast:194027,UUIDMost:990464,Slot:"offhand"},{AttributeName:"generic.armor",Name:"generic.armor",Amount:20,Operation:0,UUIDLeast:214881,UUIDMost:151369,Slot:"offhand"}]} 1
 
+# Give the player Feather Falling boots if they do not already have some
+execute unless entity @a[nbt={Inventory:[{id:"minecraft:chainmail_boots"}]}] run replaceitem entity @s armor.feet minecraft:chainmail_boots{Unbreakable:1b,Enchantments:[{id:"minecraft:feather_falling",lvl:4s},{id:"minecraft:binding_curse",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0,Operation:0,UUIDLeast:145740,UUIDMost:120074}]} 1
+
 # Clear up to 8 torches and then them back.
 clear @s minecraft:torch 8
 give @s minecraft:torch 8
