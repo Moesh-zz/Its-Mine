@@ -1,19 +1,14 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
+    "type": "minecraft:block",
+    "pools": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:redstone"
+        "rolls": 1,
+        "entries": [
+            {
+            "type": "minecraft:loot_table",
+            "name": "moesh:blocks/redstone_ore"
+            }
+        ]
         }
-      ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ]
-    }
-  ]
-}
+    ]
+}}

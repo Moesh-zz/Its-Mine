@@ -31,191 +31,108 @@ DROP_SCAFFOLDING = """{
 }"""
 
 DROP_COAL_ORE = """{
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
+    "type": "minecraft:block",
+    "pools": [
         {
-          "type": "minecraft:alternatives",
-          "children": [
+        "rolls": 1,
+        "entries": [
             {
-              "type": "minecraft:item",
-              "functions": [
-                {
-                  "function": "minecraft:apply_bonus",
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops"
-                },
-                {
-                  "function": "minecraft:explosion_decay"
-                }
-              ],
-              "name": "minecraft:coal"
+            "type": "minecraft:loot_table",
+            "name": "moesh:blocks/coal_ore"
             }
-          ]
+        ]
         }
-      ]
-    }
-  ]
+    ]
 }"""
 
 DROP_IRON_INGOT = """{
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
+    "type": "minecraft:block",
+    "pools": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:iron_ingot"
+        "rolls": 1,
+        "entries": [
+            {
+            "type": "minecraft:loot_table",
+            "name": "moesh:blocks/iron_ore"
+            }
+        ]
         }
-      ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ]
-    }
-  ]
+    ]
 }"""
 
 DROP_GOLD_INGOT = """{
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
+    "type": "minecraft:block",
+    "pools": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:gold_ingot"
+        "rolls": 1,
+        "entries": [
+            {
+            "type": "minecraft:loot_table",
+            "name": "moesh:blocks/gold_ore"
+            }
+        ]
         }
-      ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ]
-    }
-  ]
+    ]
 }"""
 
 DROP_REDSTONE_ORE = """{
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
+    "type": "minecraft:block",
+    "pools": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:redstone"
+        "rolls": 1,
+        "entries": [
+            {
+            "type": "minecraft:loot_table",
+            "name": "moesh:blocks/redstone_ore"
+            }
+        ]
         }
-      ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ]
-    }
-  ]
-}"""
+    ]
+}}"""
 
 DROP_DIAMOND_ORE = """{
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
+    "type": "minecraft:block",
+    "pools": [
         {
-          "type": "minecraft:alternatives",
-          "children": [
+        "rolls": 1,
+        "entries": [
             {
-              "type": "minecraft:item",
-              "functions": [
-                {
-                  "function": "minecraft:apply_bonus",
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops"
-                },
-                {
-                  "function": "minecraft:explosion_decay"
-                }
-              ],
-              "name": "minecraft:diamond"
+            "type": "minecraft:loot_table",
+            "name": "moesh:blocks/diamond_ore"
             }
-          ]
+        ]
         }
-      ]
-    }
-  ]
+    ]
 }"""
 
 DROP_EMERALD_ORE = """{
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
+    "type": "minecraft:block",
+    "pools": [
         {
-          "type": "minecraft:alternatives",
-          "children": [
+        "rolls": 1,
+        "entries": [
             {
-              "type": "minecraft:item",
-              "functions": [
-                {
-                  "function": "minecraft:apply_bonus",
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops"
-                },
-                {
-                  "function": "minecraft:explosion_decay"
-                }
-              ],
-              "name": "minecraft:emerald"
+            "type": "minecraft:loot_table",
+            "name": "moesh:blocks/emerald_ore"
             }
-          ]
+        ]
         }
-      ]
-    }
-  ]
+    ]
 }"""
 
 DROP_LAPIS_ORE = """{
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
+    "type": "minecraft:block",
+    "pools": [
         {
-          "type": "minecraft:alternatives",
-          "children": [
+        "rolls": 1,
+        "entries": [
             {
-              "type": "minecraft:item",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": {
-                    "min": 4.0,
-                    "max": 9.0,
-                    "type": "minecraft:uniform"
-                  }
-                },
-                {
-                  "function": "minecraft:apply_bonus",
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops"
-                },
-                {
-                  "function": "minecraft:explosion_decay"
-                }
-              ],
-              "name": "minecraft:lapis_lazuli"
+            "type": "minecraft:loot_table",
+            "name": "moesh:blocks/lapis_ore"
             }
-          ]
+        ]
         }
-      ]
-    }
-  ]
+    ]
 }"""
 
 # This is the brain of the operation. This table will indicate what block drops should have ores,
