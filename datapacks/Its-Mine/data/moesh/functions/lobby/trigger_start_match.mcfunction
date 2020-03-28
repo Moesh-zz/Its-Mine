@@ -12,6 +12,3 @@ scoreboard players operation TimeInTicks gameVariable = TimeToStartMatch gameVar
 # Setup new triggers for the player
 scoreboard players reset * startMatch
 scoreboard players enable @a cancelStart
-
-# TODO: Remove after testing
-scoreboard objectives setdisplay sidebar gameVariable
