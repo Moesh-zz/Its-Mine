@@ -40,12 +40,13 @@ gamerule disableElytraMovementCheck true
 gamerule spectatorsGenerateChunks false
 gamerule spawnRadius 7
 
+tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"Gamerules set","color":"light_purple"}]}
+
 # Submitted for the approval of the Midnight Society...
 time set midnight
+tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"Time set to midnight","color":"light_purple"}]}
 
 # The vanilla datapack has only a few required items to make the game work, like fluids.
 # We'll replace this in our datapack.
 datapack disable vanilla
-
-# Let's alert the devs.
-tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"Gamerules and world options set","color":"green"}]}
+tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"Vanilla datapack disabled","color":"light_purple"}]}

@@ -12,4 +12,4 @@ tp @e[type=!player] ~ -50 ~
 kill @e[type=!player]
 
 # Let's alert the devs.
-tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"All non-essential entities cleared.","color":"green"}]}
+tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"All non-player entities cleared","color":"light_purple"}]}

@@ -28,31 +28,6 @@ scoreboard objectives add CONST dummy
 	scoreboard players set 20 CONST 20
 	scoreboard players set 60 CONST 60
 
-# SET GAME VARIABLES
-scoreboard objectives remove gameVariable
-scoreboard objectives add gameVariable dummy
-	# Index:
-	# 0 = Lobby
-	# 1 = In-progress
-	# 2 = Post game
-	# Game starts in lobby mode by default.
-	scoreboard players set GameState gameVariable 0
-	# 15 seconds until game
-	scoreboard players set TimeToStartMatch gameVariable 300
-	scoreboard players set TimeToEndMatch gameVariable 12000
-	# The round is no longer starting. It started.
-	scoreboard players set StartingMatch gameVariable 0
-	# We want to be able to set variables from one location instead of multiple.
-	scoreboard players operation TimeInTicks gameVariable = TimeToStartMatch gameVariable
-	# Set-up ore values
-	scoreboard players set #Coal gameVariable 1
-	scoreboard players set #IronOre gameVariable 2
-	scoreboard players set #GoldOre gameVariable 22
-	scoreboard players set #Redstone gameVariable 8
-	scoreboard players set #Diamond gameVariable 62
-	scoreboard players set #Emerald gameVariable 127
-	scoreboard players set #LapisLazuli gameVariable 56
-
 # We must keep track of all different kinds of scores for players.
 scoreboard objectives remove Coal
 scoreboard objectives add Coal dummy
@@ -101,4 +76,4 @@ scoreboard objectives remove cancelStart
 scoreboard objectives add cancelStart trigger
 
 # Let's alert the devs.
-tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"Teams and objectives reset","color":"green"}]}
+tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"Teams and objectives removed and reset","color":"light_purple"}]}
