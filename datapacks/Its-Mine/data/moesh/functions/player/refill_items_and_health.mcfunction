@@ -5,7 +5,7 @@
 #---------------------------------------------------------------------------------------------------
 
 # Refill health and food
-effect give @s minecraft:instant_health 1 3 false
+effect give @s minecraft:regeneration 3 10 false
 effect give @s minecraft:saturation 5 100 false
 
 # If they don't have a pickaxe, give them one!
