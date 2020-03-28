@@ -12,6 +12,8 @@ scoreboard players operation #Every20Ticks gameVariable %= 20 CONST
 # (FOURTY CONST, if you set it up right in load.mcfunction)
 
 
+# For context: This is a function pulled from an attack/defend map. I left this note in because
+# I love it so.
 
 # Pull up a chair, let me tell you about game ticks and stuff...
 #
