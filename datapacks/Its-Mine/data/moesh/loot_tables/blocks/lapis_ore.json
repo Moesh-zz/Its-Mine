@@ -1,37 +1,210 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:alternatives",
-          "children": [
+	"type": "minecraft:block",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:lapis_lazuli",
+					"weight": 1,
+					"functions": [
+						{
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 4.0,
+                "max": 9.0,
+                "type": "minecraft:uniform"
+              }
+            },
             {
-              "type": "minecraft:item",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": {
-                    "min": 4.0,
-                    "max": 9.0,
-                    "type": "minecraft:uniform"
-                  }
-                },
-                {
-                  "function": "minecraft:apply_bonus",
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops"
-                },
-                {
-                  "function": "minecraft:explosion_decay"
-                }
-              ],
-              "name": "minecraft:lapis_lazuli"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+							"function": "minecraft:explosion_decay"
+						}
+					]
+				}
+			],
+			"conditions": [
+				{
+					"condition": "minecraft:alternative",
+					"terms": [
+						{
+							"condition": "minecraft:location_check",
+							"offsetX": 1,
+							"predicate": {
+								"light": {
+									"light": {
+										"min": 8
+									}
+								}
+							}
+						},
+						{
+							"condition": "minecraft:location_check",
+							"offsetX": -1,
+							"predicate": {
+								"light": {
+									"light": {
+										"min": 8,
+										"max": 2
+									}
+								}
+							}
+						},
+						{
+							"condition": "minecraft:location_check",
+							"offsetY": 1,
+							"predicate": {
+								"light": {
+									"light": {
+										"min": 8
+									}
+								}
+							}
+						},
+						{
+							"condition": "minecraft:location_check",
+							"offsetY": -1,
+							"predicate": {
+								"light": {
+									"light": {
+										"min": 8
+									}
+								}
+							}
+						},
+						{
+							"condition": "minecraft:location_check",
+							"offsetZ": 1,
+							"predicate": {
+								"light": {
+									"light": {
+										"min": 8
+									}
+								}
+							}
+						},
+						{
+							"condition": "minecraft:location_check",
+							"predicate": {
+								"light": {
+									"light": {
+										"min": 8
+									}
+								}
+							}
+						}
+					]
+				}
+			]
+    },
+    {
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:silverfish_spawn_egg",
+					"weight": 1,
+					"functions": [
+						{
+							"function": "minecraft:set_nbt",
+							"tag": "{Tags:[\"SummonSilverfish\"]}"
+						}
+					],
+					"conditions": [
+						{
+							"condition": "minecraft:inverted",
+							"term": {
+								"condition": "minecraft:alternative",
+								"terms": [
+									{
+										"condition": "minecraft:inverted",
+										"term": {
+											"condition": "minecraft:location_check",
+											"offsetX": 1,
+											"predicate": {
+												"light": {
+													"light": {
+														"max": 7
+													}
+												}
+											}
+										}
+									},
+									{
+										"condition": "minecraft:inverted",
+										"term": {
+											"condition": "minecraft:location_check",
+											"offsetX": -1,
+											"predicate": {
+												"light": {
+													"light": {
+														"max": 7
+													}
+												}
+											}
+										}
+									},
+									{
+										"condition": "minecraft:inverted",
+										"term": {
+											"condition": "minecraft:location_check",
+											"offsetY": 1,
+											"predicate": {
+												"light": {
+													"light": {
+														"max": 7
+													}
+												}
+											}
+										}
+									},
+									{
+										"condition": "minecraft:inverted",
+										"term": {
+											"condition": "minecraft:location_check",
+											"offsetY": -1,
+											"predicate": {
+												"light": {
+													"light": {
+														"max": 7
+													}
+												}
+											}
+										}
+									},
+									{
+										"condition": "minecraft:inverted",
+										"term": {
+											"condition": "minecraft:location_check",
+											"offsetZ": 1,
+											"predicate": {
+												"light": {
+													"light": {
+														"max": 7
+													}
+												}
+											}
+										}
+									},
+									{
+										"condition": "minecraft:inverted",
+										"term": {
+											"condition": "minecraft:location_check",
+											"predicate": {
+												"light": {
+													"light": {
+														"max": 7
+													}
+												}
+											}
+										}
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	]
 }
