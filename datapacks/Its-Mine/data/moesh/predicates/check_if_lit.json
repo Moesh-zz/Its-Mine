@@ -1,0 +1,70 @@
+{
+	"condition": "minecraft:alternative",
+	"terms": [
+		{
+			"condition": "minecraft:location_check",
+			"offsetX": 1,
+			"predicate": {
+				"light": {
+					"light": {
+						"min": 8
+					}
+				}
+			}
+		},
+		{
+			"condition": "minecraft:location_check",
+			"offsetX": -1,
+			"predicate": {
+				"light": {
+					"light": {
+						"min": 8
+					}
+				}
+			}
+		},
+		{
+			"condition": "minecraft:location_check",
+			"offsetY": 1,
+			"predicate": {
+				"light": {
+					"light": {
+						"min": 8
+					}
+				}
+			}
+		},
+		{
+			"condition": "minecraft:location_check",
+			"offsetY": -1,
+			"predicate": {
+				"light": {
+					"light": {
+						"min": 8
+					}
+				}
+			}
+		},
+		{
+			"condition": "minecraft:location_check",
+			"offsetZ": 1,
+			"predicate": {
+				"light": {
+					"light": {
+						"min": 8
+					}
+				}
+			}
+		},
+		{
+			"condition": "minecraft:location_check",
+			"predicate": {
+				"light": {
+					"light": {
+						"min": 8
+					}
+				}
+			}
+		}
+	]
+}
