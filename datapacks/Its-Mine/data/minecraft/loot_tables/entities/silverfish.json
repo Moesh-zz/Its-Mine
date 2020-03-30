@@ -6,7 +6,7 @@
         "entries": [
             {
             "type": "minecraft:loot_table",
-            "name": "moesh:gameplay/drop_useful_items"
+            "name": "moesh:gameplay/drop_torches"
             }
         ]
         }
