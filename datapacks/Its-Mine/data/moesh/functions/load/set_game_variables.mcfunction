@@ -30,8 +30,8 @@ scoreboard objectives add gameVariable dummy
 
     # Set-up ore values
 	scoreboard players set #Coal gameVariable 1
-	scoreboard players set #IronOre gameVariable 2
-	scoreboard players set #GoldOre gameVariable 22
+	scoreboard players set #IronIngot gameVariable 2
+	scoreboard players set #GoldIngot gameVariable 22
 	scoreboard players set #Redstone gameVariable 8
 	scoreboard players set #Diamond gameVariable 62
 	scoreboard players set #Emerald gameVariable 127

@@ -9,10 +9,10 @@ scoreboard players set #ClearedOre gameVariable 0
 # Clear the ore and store the results, then add it to permanent holding.
 execute store result score #ClearedOre gameVariable run clear @s minecraft:coal
 scoreboard players operation @s Coal += #ClearedOre gameVariable
-execute store result score #ClearedOre gameVariable run clear @s minecraft:iron_ore
-scoreboard players operation @s IronOre += #ClearedOre gameVariable
-execute store result score #ClearedOre gameVariable run clear @s minecraft:gold_ore
-scoreboard players operation @s GoldOre += #ClearedOre gameVariable
+execute store result score #ClearedOre gameVariable run clear @s minecraft:iron_ingot
+scoreboard players operation @s IronIngot += #ClearedOre gameVariable
+execute store result score #ClearedOre gameVariable run clear @s minecraft:gold_ingot
+scoreboard players operation @s GoldIngot += #ClearedOre gameVariable
 execute store result score #ClearedOre gameVariable run clear @s minecraft:redstone
 scoreboard players operation @s Redstone += #ClearedOre gameVariable
 execute store result score #ClearedOre gameVariable run clear @s minecraft:diamond

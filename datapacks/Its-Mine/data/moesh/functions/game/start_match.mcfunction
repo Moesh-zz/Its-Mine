@@ -32,6 +32,15 @@ playsound minecraft:event.raid.horn master @a 217 100 195 999999
 execute as @a[team=players] run function moesh:player/refill_items_and_health
 gamemode survival @a[team=players]
 
+# Set players scores to zero
+scoreboard players set @a[team=players] Coal 0
+scoreboard players set @a[team=players] IronIngot 0
+scoreboard players set @a[team=players] GoldIngot 0
+scoreboard players set @a[team=players] Redstone 0
+scoreboard players set @a[team=players] Diamond 0
+scoreboard players set @a[team=players] Emerald 0
+scoreboard players set @a[team=players] LapisLazuli 0
+
 # Update player triggers
 scoreboard players reset * cancelStart
 scoreboard players enable @a[team=players] gg

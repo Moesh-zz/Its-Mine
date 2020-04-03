@@ -9,6 +9,8 @@ playsound minecraft:event.raid.horn master @a 217 100 195 999999 0.75
 # Set gamestate to 2 (after game is finished)
 scoreboard players set GameState gameVariable 2
 
+function moesh:game/count_points
+
 # All players become spectators!
 gamemode spectator @a
 team join specators @a

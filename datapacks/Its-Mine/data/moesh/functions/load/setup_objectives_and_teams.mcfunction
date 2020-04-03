@@ -31,10 +31,10 @@ scoreboard objectives add CONST dummy
 # We must keep track of all different kinds of scores for players.
 scoreboard objectives remove Coal
 scoreboard objectives add Coal dummy
-scoreboard objectives remove IronOre
-scoreboard objectives add IronOre dummy
-scoreboard objectives remove GoldOre
-scoreboard objectives add GoldOre dummy
+scoreboard objectives remove IronIngot
+scoreboard objectives add IronIngot dummy
+scoreboard objectives remove GoldIngot
+scoreboard objectives add GoldIngot dummy
 scoreboard objectives remove Redstone
 scoreboard objectives add Redstone dummy
 scoreboard objectives remove Diamond
@@ -43,6 +43,10 @@ scoreboard objectives remove Emerald
 scoreboard objectives add Emerald dummy
 scoreboard objectives remove LapisLazuli
 scoreboard objectives add LapisLazuli dummy
+
+# Display score
+scoreboard objectives remove displayScore
+scoreboard objectives add displayScore dummy {"translate":"Score"}
 
 # WHEN DOES THE PLAYER SNEAK?!
 scoreboard objectives remove sneakTime
