@@ -72,9 +72,8 @@ _All levels MUST meet these requirements._
 	- This make resetting the level very, very quick by avoiding sky light recalculations.
 	- The level should feel a bit oppressive. The sky is a bit too comforting.
 	- Going "underground" is core to the caving experience.
-- **Must not exceed 30x30 chunks.**
+- **Must not exceed 10x10 chunks.**
 	- A region file is 32x32 chunks, there is more technical risk when an level crosses the border of a region files
-	- 30x30 chunks is an excessively large level, that's 480x256x480 blocks!
 	- I've found 96x96x96 blocks to be more than enough space to create an interesting level.
 
 ### Other details to take into consideration
@@ -98,6 +97,7 @@ _It's Mine!_ has altered Minecraft's survival gameplay. These alterations could 
 ## Altered global features
 Some Minecraft features, which players may expect to work as normal, have been altered. 
 
+- Silverfish will spawn when ores are not lit (must light level 8+ to spawn their usual ores)
 - Trader Llamas looks for potentially hostile mobs within a 5 block radius, and turns them into rabbits
 - Scaffolding applies the levitation effect when players is standing inside of them (also stops when sneaking)
 - The vanilla datapack has been disabled to remove the default advancements and recipes
@@ -136,5 +136,5 @@ Players are given these items when near a Wandering Trader
 These are the only items which can be dropped by mobs or blocks.
 - **Food**: Normal chance to be dropped by hostile mobs
 - **Scaffolding**: Drops from blocks (one to one) and hostile mobs
-- **Torches**: Normal chance to be dropped by hostile mobs
+- **Torches**: Normal chance to be dropped by hostile mobs. Silverfish drop 1-3 torch on death.
 - **Ender Pearls**: Very low chance to be dropped by hostile mobs
