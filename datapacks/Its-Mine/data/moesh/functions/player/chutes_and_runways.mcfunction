@@ -1,12 +1,15 @@
 # Called from: moesh:tick
 
 #---------------------------------------------------------------------------------------------------
-# Purpose: Give levitation to players who enter chutes when they are not shifting.
+# Purpose: Give player speed when scaffolding had a solid block under it.
 #---------------------------------------------------------------------------------------------------
-# The most clean version of this mechanic can be done in two lines. This method of adding a layer
-# of handling through a tag allows us to run multiple commands that can be ignored if the first
-# command is not successful.
+execute as @a[team=players] at @s anchored feet if block ~ ~-1 ~ minecraft:scaffolding unless block ~ ~-2 ~ minecraft:air run tag @s add Boost
+effect give @a[team=players,tag=Boost] minecraft:speed 1 3 false
+execute as @a[team=players] run tag @s remove Boost
 
+#---------------------------------------------------------------------------------------------------
+# Purpose: Handle different scaffolding configurations
+#---------------------------------------------------------------------------------------------------
 # Is the player in scaffolding and not sneaking? Shoot them up.
 execute as @a[tag=!Levitate] at @s anchored feet if block ~ ~ ~ minecraft:scaffolding unless entity @s[scores={sneakTime=1..}] run tag @s add Levitate
 execute as @a[tag=Levitate,scores={sneakTime=0}] at @s anchored feet if block ~ ~ ~ minecraft:scaffolding run effect give @s minecraft:levitation 3 23 false

@@ -17,8 +17,8 @@ tag @a[tag=!Registered] add Registered
 # Player cannot drop items
 function moesh:player/return_dropped_items
 
-# Players can always use scaffolding as chutes.
-function moesh:player/chutes
+# Players can always use scaffolding as chutes or runways
+function moesh:player/chutes_and_runways
 
 # If an ore is dug-up in the dark, this item will appear with this tag. Summon a silverfish because
 # we want to encourage players to light-up their ores, Silverfish are guaranteed to drop at least
