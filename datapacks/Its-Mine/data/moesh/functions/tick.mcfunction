@@ -49,7 +49,7 @@ execute if score GameState gameVariable matches 0 if score StartingMatch gameVar
 #---------------------------------------------------------------------------------------------------
 
 # Prevent players from leaving the play area
-execute as @a at @s unless entity @s[gamemode=spectator] if score GameState gameVariable matches 1 run function moesh:game/out_of_bounds
+# TODO: execute as @a at @s unless entity @s[gamemode=spectator] if score GameState gameVariable matches 1 run function moesh:game/out_of_bounds
 
 # This next line is essentially protection of players against themselves. They can use
 # Let players run a GG command to end a game early
