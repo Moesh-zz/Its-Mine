@@ -11,6 +11,11 @@ scoreboard players set GameState gameVariable 2
 
 function moesh:game/count_points
 
+# Heal players so they don't die when losing health.
+effect give @a minecraft:instant_health 5 30 false
+clear @a minecraft:scaffolding
+clear @a minecraft:torch
+
 # All players become spectators!
 gamemode spectator @a
 team join specators @a

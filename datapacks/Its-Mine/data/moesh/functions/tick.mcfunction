@@ -11,6 +11,7 @@ execute as @a[scores={leaveGame=1..}] at @s run function moesh:player/left_game
 # The functions below will handle players, no matter what state the game is in.
 execute as @a[tag=!Registered] at @s run function moesh:player/reset
 execute as @a[tag=!Registered] at @s run function moesh:player/set_objectives
+execute as @a[tag=!Registered] at @s run function moesh:player/refill_items_and_health
 execute as @a[tag=!Registered] run tellraw @s {"translate":"%s It's Mine! by Moesh","color":"light_purple","with":[{"text":">>>","color":"white"}]}
 tag @a[tag=!Registered] add Registered
 

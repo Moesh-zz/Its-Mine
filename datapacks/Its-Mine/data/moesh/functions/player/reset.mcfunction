@@ -4,7 +4,13 @@
 # Purpose: Reset all parts of the map which do not affect the current game state.
 #---------------------------------------------------------------------------------------------------
 # Clear player of their blessings.
-clear @s
+clear @s minecraft:coal
+clear @s minecraft:iron_ingot
+clear @s minecraft:gold_ingot
+clear @s minecraft:redstone
+clear @s minecraft:diamond
+clear @s minecraft:emerald
+clear @s minecraft:lapis_lazuli
 effect clear @s
 xp set @s 0 levels
 xp set @s 0 points
