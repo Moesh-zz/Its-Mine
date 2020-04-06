@@ -44,9 +44,15 @@ scoreboard objectives add Emerald dummy
 scoreboard objectives remove LapisLazuli
 scoreboard objectives add LapisLazuli dummy
 
+scoreboard objectives remove oreValue
+scoreboard objectives add oreValue dummy
+
+scoreboard objectives remove testScore
+scoreboard objectives add testScore dummy
+
 # Display score
-scoreboard objectives remove displayScore
-scoreboard objectives add displayScore dummy {"translate":"Score"}
+scoreboard objectives remove Score
+scoreboard objectives add Score dummy {"translate":"Score","color":"green"}
 
 # WHEN DOES THE PLAYER SNEAK?!
 scoreboard objectives remove sneakTime

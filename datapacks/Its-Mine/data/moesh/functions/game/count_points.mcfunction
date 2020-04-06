@@ -4,34 +4,46 @@
 # Purpose: Always tick these functions
 #---------------------------------------------------------------------------------------------------
 
-scoreboard objectives setdisplay sidebar displayScore
+# Display the scoreboard
+scoreboard objectives setdisplay sidebar Score
 
 # Announce how many ores they have, and then calculate and display points.
-tellraw @a {"translate":"%s has [Coal] * %s","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"Coal"}}]}
-scoreboard players operation @s Coal *= #Coal gameVariable
-scoreboard players operation @s displayScore = @s Coal
+scoreboard players operation @s oreValue = @s Coal
+scoreboard players operation @s oreValue *= #Coal gameVariable
+execute unless score @s oreValue matches 0 run tellraw @a {"translate":"%s has %s [Coal] (Valued at %s points)","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"Coal"}},{"score":{"name":"@s","objective":"oreValue"}}]}
+scoreboard players operation @s Score = @s oreValue
 
-tellraw @a {"translate":"%s has [Iron Ingot] * %s","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"IronIngot"}}]}
-scoreboard players operation @s IronIngot *= #IronIngot gameVariable
-scoreboard players operation @s displayScore += @s IronIngot
+scoreboard players operation @s oreValue = @s IronIngot
+scoreboard players operation @s oreValue *= #IronIngot gameVariable
+execute unless score @s oreValue matches 0 run tellraw @a {"translate":"%s has %s [Iron Ingot] (Valued at %s points)","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"IronIngot"}},{"score":{"name":"@s","objective":"oreValue"}}]}
+scoreboard players operation @s Score += @s oreValue
 
-tellraw @a {"translate":"%s has [Gold Ingot] * %s","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"GoldIngot"}}]}
-scoreboard players operation @s GoldIngot *= #GoldIngot gameVariable
-scoreboard players operation @s displayScore += @s GoldIngot
+scoreboard players operation @s oreValue = @s GoldIngot
+scoreboard players operation @s oreValue *= #GoldIngot gameVariable
+execute unless score @s oreValue matches 0 run tellraw @a {"translate":"%s has %s [Gold Ingot] (Valued at %s points)","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"GoldIngot"}},{"score":{"name":"@s","objective":"oreValue"}}]}
+scoreboard players operation @s Score += @s oreValue
 
+scoreboard players operation @s oreValue = @s Redstone
+scoreboard players operation @s oreValue *= #Redstone gameVariable
+execute unless score @s oreValue matches 0 run tellraw @a {"translate":"%s has %s [Redstone] (Valued at %s points)","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"Redstone"}},{"score":{"name":"@s","objective":"oreValue"}}]}
+scoreboard players operation @s Score += @s oreValue
 
-tellraw @a {"translate":"%s has [Redstone] * %s","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"Redstone"}}]}
-scoreboard players operation @s Redstone *= #Redstone gameVariable
-scoreboard players operation @s displayScore = @s Redstone
+scoreboard players operation @s oreValue = @s Diamond
+scoreboard players operation @s oreValue *= #Diamond gameVariable
+execute unless score @s oreValue matches 0 run tellraw @a {"translate":"%s has %s [Diamond] (Valued at %s points)","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"Diamond"}},{"score":{"name":"@s","objective":"oreValue"}}]}
+scoreboard players operation @s Score += @s oreValue
 
-tellraw @a {"translate":"%s has [Diamond] * %s","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"Diamond"}}]}
-scoreboard players operation @s Diamond *= #Diamond gameVariable
-scoreboard players operation @s displayScore = @s Diamond
+scoreboard players operation @s oreValue = @s Emerald
+scoreboard players operation @s oreValue *= #Emerald gameVariable
+execute unless score @s oreValue matches 0 run tellraw @a {"translate":"%s has %s [Emerald] (Valued at %s points)","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"Emerald"}},{"score":{"name":"@s","objective":"oreValue"}}]}
+scoreboard players operation @s Score += @s oreValue
 
-tellraw @a {"translate":"%s has [Emerald] * %s","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"Emerald"}}]}
-scoreboard players operation @s Emerald *= #Emerald gameVariable
-scoreboard players operation @s displayScore = @s Emerald
+scoreboard players operation @s oreValue = @s LapisLazuli
+scoreboard players operation @s oreValue *= #LapisLazuli gameVariable
+execute unless score @s oreValue matches 0 run tellraw @a {"translate":"%s has %s [Lapis Lazuli] (Valued at %s points)","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"LapisLazuli"}},{"score":{"name":"@s","objective":"oreValue"}}]}
+scoreboard players operation @s Score += @s oreValue
 
-tellraw @a {"translate":"%s has [Lapis Lazuli] * %s","with":[{"selector":"@s"},{"score":{"name":"@s","objective":"LapisLazuli"}}]}
-scoreboard players operation @s LapisLazuli *= #LapisLazuli gameVariable
-scoreboard players operation @s displayScore = @s LapisLazuli
+# Determine the winner
+scoreboard players operation @a testScore > @a Score
+execute as @a at @s run scoreboard players operation @s testScore -= @s Score
+execute as @s[scores={testScore=0}] run say Victory! It's mine!
