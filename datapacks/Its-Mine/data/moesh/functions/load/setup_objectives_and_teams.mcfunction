@@ -12,12 +12,18 @@ team add players {"text":"Players"}
 	team modify players seeFriendlyInvisibles true
 
 team remove spectators
-team add spectators {"text":"Spectators","color":"gray"}
+team add spectators {"text":"Spectators"}
 # If you're on this team, you are always in the spectator game mode.
 	team modify spectators collisionRule pushOtherTeams
 	team modify spectators deathMessageVisibility never
 	team modify spectators seeFriendlyInvisibles false
 	team modify spectators color gray
+
+team remove traders
+team add traders {"text":"Traders"}
+	team modify traders collisionRule never
+	team modify traders deathMessageVisibility always
+	team modify traders color green
 
 #---------------------------------------------------------------------------------------------------
 # Purpose: Set-up objectives
