@@ -102,6 +102,11 @@ Some Minecraft features, which players may expect to work as normal, have been a
 - Silverfish will spawn when ores are not lit (must light level 8+ to spawn their usual ores)
 - Trader Llamas looks for potentially hostile mobs within a 5 block radius, and turns them into rabbits
 - Scaffolding applies the levitation effect when players is standing inside of them (also stops when sneaking)
+	- Being in scaffolding for 1..5 ticks will give a low level of levitation
+	- Being in scaffolding for 6..11 ticks will give a medium level of levitation
+	- Being in scaffolding for 12..49 ticks will give a high level of levitation
+	- Being in scaffolding for 50.. ticks will give a MEGA level of levitation
+	- Players can hold shift to sneak in scaffolding and gain boost
 - The vanilla datapack has been disabled to remove the default advancements and recipes
 Elements required to make Minecraft work as players expect have been replicated
 - Players will only have to walk near a Wandering Trader to trigger the "turn-in/refill" sequence instead of trading with them
