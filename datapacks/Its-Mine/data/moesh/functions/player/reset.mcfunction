@@ -23,11 +23,7 @@ effect give @s minecraft:saturation 5 10 true
 
 # Set players game mode
 # Game is in lobby mode and make them join the right team
-execute if score GameState gameVariable matches 0 run gamemode adventure @s
-execute if score GameState gameVariable matches 0 run team join players @s
-execute if score GameState gameVariable matches 0 run scoreboard players enable @s spectate
-# Game is in-progress
-execute if score GameState gameVariable matches 1 run gamemode spectator @s
-execute if score GameState gameVariable matches 1 run team join specators @s
-# Game is post-match
-execute if score GameState gameVariable matches 2 run gamemode spectator @s
+execute if score GameState gameVariable matches 0 as @s at @s run function moesh:player/set_to_lobby_mode
+
+# Game is in-progress or post-match
+execute if score GameState gameVariable matches 1..2 as @s at @s run function moesh:player/spectate
