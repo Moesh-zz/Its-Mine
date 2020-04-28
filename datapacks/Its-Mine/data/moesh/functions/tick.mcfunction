@@ -57,7 +57,7 @@ execute if score GameState gameVariable matches 0 if score StartingMatch gameVar
 # /trigger set gg 0, therefore disabling the gg trigger for themselves.
 execute if score GameState gameVariable matches 1 run scoreboard players set @a[scores={gg=..-1}] gg 0
 execute if score GameState gameVariable matches 1 run scoreboard players enable @a[scores={gg=0}] gg
-execute as @a[scores={gg=1..}] at @s if score GameState gameVariable matches 1 run function moesh:player/gg
+execute as @a[scores={gg=1..},limit=1] at @s if score GameState gameVariable matches 1 run function moesh:player/gg
 
 execute if score GameState gameVariable matches 1 run execute as @a at @s run function moesh:player/check_for_trader
 
@@ -73,5 +73,5 @@ execute if score GameState gameVariable matches 1 run function moesh:game/timer
 # Let players look at the map before resetting it. It must be done manually.
 execute if score GameState gameVariable matches 2 run scoreboard players set @a[scores={reset=..-1}] reset 0
 execute if score GameState gameVariable matches 2 run scoreboard players enable @a[scores={reset=..0}] reset
-execute if entity @a[scores={reset=1..}] if score GameState gameVariable matches 2 run function #moesh:load
+execute as @a[scores={reset=1},limit=1] at @s if score GameState gameVariable matches 2 run function #moesh:load
 execute if entity @a[scores={reset=1..}] if score GameState gameVariable matches 2 run scoreboard players reset * reset

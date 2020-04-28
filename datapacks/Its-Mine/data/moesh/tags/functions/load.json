@@ -1,9 +1,9 @@
 {
 	"values": [
 		"moesh:load/setup_testing",
-		"moesh:load/reset_entities",
 		"moesh:load/set_gamerules",
 		"moesh:load/setup_objectives_and_teams",
-		"moesh:load/set_game_variables"
+		"moesh:load/set_game_variables",
+		"moesh:load/reset_entities"
 	]
 }
