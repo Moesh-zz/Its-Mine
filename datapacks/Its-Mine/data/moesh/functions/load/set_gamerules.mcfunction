@@ -37,7 +37,7 @@ gamerule maxEntityCramming 0
 gamerule randomTickSpeed 10
 gamerule reducedDebugInfo false
 gamerule disableElytraMovementCheck true
-gamerule spectatorsGenerateChunks false
+gamerule spectatorsGenerateChunks true
 gamerule spawnRadius 7
 
 tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"Gamerules set","color":"light_purple"}]}
