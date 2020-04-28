@@ -1,8 +1,7 @@
 {
 	"values": [
 		"moesh:load/setup_testing",
-		"moesh:load/clear_entities",
-		"moesh:load/summon_trader_and_llamas",
+		"moesh:load/reset_entities",
 		"moesh:load/set_gamerules",
 		"moesh:load/setup_objectives_and_teams",
 		"moesh:load/set_game_variables"
