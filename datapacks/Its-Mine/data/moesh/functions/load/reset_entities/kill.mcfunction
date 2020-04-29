@@ -12,4 +12,3 @@ execute as @e[type=!player] run kill @s
 
 # Let's alert the devs.
 tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"All non-player entities cleared","color":"light_purple"}]}
-say I KILL EM ALL
