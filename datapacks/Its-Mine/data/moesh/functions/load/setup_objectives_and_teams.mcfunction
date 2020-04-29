@@ -95,5 +95,29 @@ scoreboard objectives add cancelStart trigger
 scoreboard objectives remove inScaffolding
 scoreboard objectives add inScaffolding dummy
 
+#---------------------------------------------------------------------------------------------------
+# Purpose: Set-up scoreboard for customizable game variables.
+#---------------------------------------------------------------------------------------------------
+# Many more gameVariables are set from custom-level:set_game_variables
+
+# SET GAME VARIABLES
+# This objective is removed and reset after each round to ensure no hanky panky has occurred. 
+scoreboard objectives remove gameVariable
+scoreboard objectives add gameVariable dummy
+
+# Index:
+# 0 = Lobby
+# 1 = In-progress
+# 2 = Post game
+
+# Game starts in lobby mode by default.
+scoreboard players set GameState gameVariable 0
+
+# Used to determine whether or not the game has started.
+# This variable is accessed from moesh:tick, moesh:lobby/start_match,
+# moesh:lobby/trigger_cancel_start, and moesh:lobby/trigger_start_match
+scoreboard players set StartingMatch gameVariable 0
+
+
 # Let's alert the devs.
 tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"Teams and objectives removed and reset","color":"light_purple"}]}
