@@ -24,8 +24,8 @@ function moesh:player/chutes_and_runways
 # If an ore is dug-up in the dark, this item will appear with this tag. Summon a silverfish because
 # we want to encourage players to light-up their ores, Silverfish are guaranteed to drop at least
 # a couple of torches.
-execute as @e[type=item,nbt={Item:{tag:{Tags:["SummonSilverfish"]}}}] at @s run summon minecraft:silverfish
-execute as @e[type=item,nbt={Item:{tag:{Tags:["SummonSilverfish"]}}}] at @s run kill @s
+execute as @e[type=item,nbt={Item: {tag: {Tags: ["SummonSilverfish"]}}}] at @s run summon minecraft:silverfish
+execute as @e[type=item,nbt={Item: {tag: {Tags: ["SummonSilverfish"]}}}] at @s run kill @s
 
 #---------------------------------------------------------------------------------------------------
 # Purpose: Tick these functions during the lobby stage
