@@ -26,10 +26,17 @@ execute if score #Every20Ticks gameVariable matches 0 run scoreboard players ope
 #---------------------------------------------------------------------------------------------------
 # Purpose: Display the actionbar
 #---------------------------------------------------------------------------------------------------
+# REGULAR TIMER
 # Display this actionbar when the seconds are in the single-digits (0 to 9 seconds)
-execute if score #Every20Ticks gameVariable matches 0 if score displaySecond gameVariable matches 0..9 run title @a actionbar {"translate":"%s:0%s","with":[{"score":{"name":"displayMinute", "objective":"gameVariable"} },{"score":{"name":"displaySecond", "objective":"gameVariable"} }]}
+execute if score TimeInTicks gameVariable matches 1201.. if score #Every20Ticks gameVariable matches 0 if score displaySecond gameVariable matches 0..9 run title @a actionbar {"translate":"%s:0%s","with":[{"score":{"name":"displayMinute", "objective":"gameVariable"} },{"score":{"name":"displaySecond", "objective":"gameVariable"} }]}
 # Display this actionbar when the seconds are in the double-digits (10 to 59 seconds)
-execute if score #Every20Ticks gameVariable matches 0 if score displaySecond gameVariable matches 10.. run title @a actionbar {"translate":"%s:%s","with":[{"score":{"name":"displayMinute", "objective":"gameVariable"} },{"score":{"name":"displaySecond", "objective":"gameVariable"} } ]}
+execute if score TimeInTicks gameVariable matches 1201.. if score #Every20Ticks gameVariable matches 0 if score displaySecond gameVariable matches 10.. run title @a actionbar {"translate":"%s:%s","with":[{"score":{"name":"displayMinute", "objective":"gameVariable"} },{"score":{"name":"displaySecond", "objective":"gameVariable"} } ]}
+
+# RED TIMER AT 60 SECONDS LEFT
+# Display this actionbar when the seconds are in the single-digits (0 to 9 seconds)
+execute if score TimeInTicks gameVariable matches ..1200 if score #Every20Ticks gameVariable matches 0 if score displaySecond gameVariable matches 0..9 run title @a actionbar {"translate":"%s:0%s","color":"red", "with":[{"score":{"name":"displayMinute", "objective":"gameVariable"} },{"score":{"name":"displaySecond", "objective":"gameVariable"} }]}
+# Display this actionbar when the seconds are in the double-digits (10 to 59 seconds)
+execute if score TimeInTicks gameVariable matches ..1200 if score #Every20Ticks gameVariable matches 0 if score displaySecond gameVariable matches 10.. run title @a actionbar {"translate":"%s:%s","color":"red", "with":[{"score":{"name":"displayMinute", "objective":"gameVariable"} },{"score":{"name":"displaySecond", "objective":"gameVariable"} } ]}
 
 #---------------------------------------------------------------------------------------------------
 # Purpose: Announce time progression in chat
