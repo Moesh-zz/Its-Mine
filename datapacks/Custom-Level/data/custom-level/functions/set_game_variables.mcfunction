@@ -1,4 +1,4 @@
-# Called from: minecraft:load
+# Called from: #moesh:load
 
 #---------------------------------------------------------------------------------------------------
 # Purpose: Set game specific variables
