@@ -16,7 +16,7 @@ gamerule doWeatherCycle false
 weather clear 1000000
 gamerule showDeathMessages true
 gamerule naturalRegeneration true
-gamerule doImmediateRespawn false
+gamerule doImmediateRespawn true
 
 # Other gamerules
 gamerule disableRaids true
