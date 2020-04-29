@@ -91,5 +91,9 @@ scoreboard objectives add startMatch trigger
 scoreboard objectives remove cancelStart
 scoreboard objectives add cancelStart trigger
 
+# In Scaffolding, used in moesh:player/chutes_and_runways
+scoreboard objectives remove inScaffolding
+scoreboard objectives add inScaffolding dummy
+
 # Let's alert the devs.
 tellraw @a[gamemode=creative] {"translate":">>> %s","color":"white","with":[{"translate":"Teams and objectives removed and reset","color":"light_purple"}]}
