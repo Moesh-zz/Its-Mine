@@ -17,10 +17,5 @@ execute unless entity @s[nbt={Inventory:[{id:"minecraft:shield"}]}] run replacei
 # Give the player Feather Falling boots if they do not already have some
 execute unless entity @s[nbt={Inventory:[{id:"minecraft:chainmail_boots"}]}] run replaceitem entity @s armor.feet minecraft:chainmail_boots{Unbreakable:1b,Enchantments:[{id:"minecraft:feather_falling",lvl:4s},{id:"minecraft:binding_curse",lvl:1s}],AttributeModifiers:[{AttributeName:"generic.armor",Name:"generic.armor",Amount:0d,Operation:0,UUIDLeast:145740L,UUIDMost:120074L}]} 1
 
-# Clear up to 8 torches and then them back.
-clear @s minecraft:torch 8
-give @s minecraft:torch 8
-
-# Clear up to 32 scaffolding and then give them back
-clear @s minecraft:scaffolding 32
-give @s minecraft:scaffolding 32
+# Give players torches and scaffolding
+execute as @s run function custom-level:give_items

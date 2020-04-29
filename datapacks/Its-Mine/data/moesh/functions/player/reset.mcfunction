@@ -4,6 +4,13 @@
 # Purpose: Reset all parts of the map which do not affect the current game state.
 #---------------------------------------------------------------------------------------------------
 # Clear player of their blessings.
+clear @s minecraft:scaffolding
+clear @s minecraft:torch
+clear @s minecraft:ender_pearl
+clear @s minecraft:cooked_salmon
+clear @s minecraft:elytra
+clear @s minecraft:firework_rocket
+
 clear @s minecraft:coal
 clear @s minecraft:iron_ingot
 clear @s minecraft:gold_ingot
@@ -11,9 +18,12 @@ clear @s minecraft:redstone
 clear @s minecraft:diamond
 clear @s minecraft:emerald
 clear @s minecraft:lapis_lazuli
+
+
 effect clear @s
 xp set @s 0 levels
 xp set @s 0 points
+
 
 # Register the player on the health scoreboard
 effect give @s minecraft:absorption 3 4 false
