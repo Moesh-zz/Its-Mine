@@ -19,7 +19,7 @@ execute store result score SessionID gameVariable run time query gametime
 scoreboard players operation @a SessionID = SessionID gameVariable
 
 # Allow players to reset the map themselves
-tellraw @a {"translate":"Thanks for playing! Use [%s] to play again.","color":"green","with":[{"text":"/trigger reset set 1","color":"white","clickEvent":{"action":"suggest_command","value":"/trigger reset set 1"},"hoverEvent":{"action":"show_text","value":"Click here to send the command to your text box."}}]}
+tellraw @a {"translate":"Thanks for playing! Use [%s] to play again.","color":"green","with":[{"text":"/trigger reset","color":"white","clickEvent":{"action":"suggest_command","value":"/trigger reset"},"hoverEvent":{"action":"show_text","value":"Click here to send the command to your text box."}}]}
 
 # Update player triggers
 scoreboard players reset @a gg
