@@ -43,6 +43,7 @@ execute if score TimeInTicks gameVariable matches ..1200 if score #Every20Ticks 
 #---------------------------------------------------------------------------------------------------
 # Send message at 60 seconds left
 execute if score TimeInTicks gameVariable matches 1200 run tellraw @a {"translate":"%s seconds remain. Block drops disabled! Get to a trader.","color":"green","with":[{"score":{"name":"#InSeconds","objective":"gameVariable"},"color":"white"}]}
+execute if score TimeInTicks gameVariable matches 1200 run tellraw @a {"translate":"Ores must be given to the Wandering Trader to count!","color":"green"}
 execute if score TimeInTicks gameVariable matches 1200 run gamerule doTileDrops false
 # Send message at 30 seconds left
 execute if score TimeInTicks gameVariable matches 600 run tellraw @a {"translate":"Match will end in %s seconds.","color":"green","with":[{"score":{"name":"#InSeconds","objective":"gameVariable"},"color":"white"}]}
