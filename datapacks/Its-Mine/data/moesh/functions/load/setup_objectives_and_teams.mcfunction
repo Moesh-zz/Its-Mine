@@ -81,7 +81,7 @@ scoreboard objectives add UUID dummy
 # Enabled during the match. Players are moved to spectator if they want to gg out early.
 scoreboard objectives remove gg
 scoreboard objectives add gg trigger
-# Players can use this to reset the level after a match has conclused.
+# Players can use this to reset the level after a match has concluded.
 scoreboard objectives remove reset
 scoreboard objectives add reset trigger
 # Start match
